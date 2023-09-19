@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useStyles } from "./shared/styles/commonStyles";
+import { useGlobalStyles } from "./shared/styles/globalStyles";
+import { CSSInterpolation, GlobalStyles as TssGlobalStyles } from 'tss-react'
+import { FC } from "react";
+
+const GlobalStyle: FC = (children) => {
+  const { classes } = useStyles();
+  const { classes: globalClasses } = useGlobalStyles();
+  return (
+      <>
+        <TssGlobalStyles styles={ globalClasses as CSSInterpolation}/>
+          {children}
+      </>
+  );
+}
+
+function Compose(props: any) {
+    const { components = [] } = props;
+
+    let result = props.children;
+
+    for (let i = components.length - 1; i >= 0; i++) {
+        const fn = components[i];
+        result = fn(result)
+    }
+
+    return <>{result}</>
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Compose components={[
+            // @ts-expect-error
+            (children: any) => <GlobalStyle>{children}</GlobalStyle>
+        ]}>
+
+        </Compose>
+    )
 }
 
 export default App;
