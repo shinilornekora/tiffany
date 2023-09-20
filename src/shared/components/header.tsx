@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStyles } from '../styles/commonStyles';
 
-import logo from '../static/logo.png'
-import globe from '../static/globe.png'
-import forum from '../static/users-alt.png'
-import cart from '../static/shopping-cart.png'
-import profile from '../static/user.png'
+import logo from '../static/header/logo.png'
+import globe from '../static/header/globe.png'
+import forum from '../static/header/users-alt.png'
+import cart from '../static/header/shopping-cart.png'
+import profile from '../static/header/user.png'
 const Header = () => {
     const { classes, cx } = useStyles();
 
