@@ -1,10 +1,12 @@
-import { useStyles } from "./shared/styles/commonStyles";
 import { useGlobalStyles } from "./shared/styles/globalStyles";
 import { CSSInterpolation, GlobalStyles as TssGlobalStyles } from 'tss-react'
-import { FC } from "react";
+import Compose from './shared/utils/Compose'
+import React, { FC } from "react";
+import Header from './shared/components/header';
+import {RouterProvider} from 'react-router';
+import {createBrowserRouter} from 'react-router-dom';
 
-const GlobalStyle: FC = (children) => {
-  const { classes } = useStyles();
+const GlobalStyle: FC<{children: React.ReactNode}> = ({children}) => {
   const { classes: globalClasses } = useGlobalStyles();
   return (
       <>
@@ -14,26 +16,38 @@ const GlobalStyle: FC = (children) => {
   );
 }
 
-function Compose(props: any) {
-    const { components = [] } = props;
+const Root = () => {
+    return (
+        <div>
+            <Header/>
+        </div>
+    );
+};
 
-    let result = props.children;
+const RouterErrorElement = () => {
+    return (
+        <div>
 
-    for (let i = components.length - 1; i >= 0; i++) {
-        const fn = components[i];
-        result = fn(result)
-    }
+        </div>
+    );
+};
 
-    return <>{result}</>
-}
+
+const router = createBrowserRouter([{
+    path: '/',
+    element: <Root/>,
+    errorElement: <RouterErrorElement/>,
+    children: [
+
+    ].flat()
+}])
 
 function App() {
     return (
         <Compose components={[
-            // @ts-expect-error
-            (children: any) => <GlobalStyle>{children}</GlobalStyle>
+            (children: any) => <GlobalStyle>{children}</GlobalStyle>,
         ]}>
-
+            <RouterProvider router={router}/>
         </Compose>
     )
 }
