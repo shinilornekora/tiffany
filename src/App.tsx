@@ -5,6 +5,8 @@ import React, { FC } from "react";
 import Header from './shared/components/header';
 import {RouterProvider} from 'react-router';
 import {createBrowserRouter} from 'react-router-dom';
+import ContentBlock from './shared/components/contentBlock';
+import {useStyles} from './shared/styles/commonStyles';
 
 const GlobalStyle: FC<{children: React.ReactNode}> = ({children}) => {
   const { classes: globalClasses } = useGlobalStyles();
@@ -17,9 +19,12 @@ const GlobalStyle: FC<{children: React.ReactNode}> = ({children}) => {
 }
 
 const Root = () => {
+    const { classes } = useStyles();
+
     return (
-        <div>
+        <div className={classes.content}>
             <Header/>
+            <ContentBlock/>
         </div>
     );
 };

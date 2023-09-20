@@ -3,3 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    background: #2E2D2D;
+}
+
+
+img {
+    width: 24px;
+    height: 24px;
+}
