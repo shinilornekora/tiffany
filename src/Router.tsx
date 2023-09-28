@@ -1,9 +1,9 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { Root } from './shared/components/Root';
 import { RouterErrorElement } from './shared/components/RouterErrorElement';
 import React from 'react';
 import Cart from './shared/pages/Cart';
-import GreetingsPage from './shared/pages/GreetingsPage';
+import GreetingsPage from './shared/pages/Greetings';
 import Products from './shared/pages/Products';
 import Profile from './shared/pages/Profile';
 import Card from './shared/pages/Card';

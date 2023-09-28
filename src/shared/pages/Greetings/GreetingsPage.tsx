@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/header';
 import ContentBlock from '../../components/contentBlock';
-import { Outlet } from 'react-router';
 import { useStyles } from '../../styles/commonStyles';
 
 const GreetingsPage = () => {

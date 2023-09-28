@@ -17,10 +17,18 @@ const Header = () => {
                     <p>TeamEntropy</p>
                 </div>
                 <div className={cx(classes.header__inner, classes.header__right)}>
-                    <img src={profile} alt="profile"/>
-                    <img src={cart} alt="cart"/>
-                    <img src={forum} alt="forum"/>
-                    <img src={globe} alt="language"/>
+                    <a href="/profile">
+                        <img src={profile} alt="profile"/>
+                    </a>
+                    <a href="/cart">
+                        <img src={cart} alt="cart"/>
+                    </a>
+                    <a href="/forum">
+                        <img src={forum} alt="forum"/>
+                    </a>
+                    <a href="/languange">
+                        <img src={globe} alt="language"/>
+                    </a>
                 </div>
             </div>
         </section>
