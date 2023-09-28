@@ -15,7 +15,8 @@ export const useStyles = makeStyles()(() => ({
     },
     greetings__slider: {
         fontSize: '36px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBlockEnd: 0,
     },
     greetings__description: {
         fontSize: '14px',
