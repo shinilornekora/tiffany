@@ -26,23 +26,20 @@ const ContentBlock = () => {
                 ease: 'power3.inOut',
             },
         )
-        setTimeout(() => setShow(true), 1000)
+        setTimeout(() => setShow(true), 400)
     }, [logInActive]);
 
     useEffect(() => {
-        gsap.timeline().to(
-            inputRef,
+        if (!show) {
+            return;
+        }
+        gsap.to(
+            inputRef.current,
             {
-                opacity: 0,
+                opacity: 1,
+                duration: 2,
             }
-        ).fromTo(inputRef,
-            {
-                opacity: 0,
-            },
-            {
-            opacity: 1,
-            duration: 1,
-            });
+        )
     }, [show])
 
     return (
