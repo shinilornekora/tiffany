@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: jost, serif;
+    font-family: MAXWELL_REGULAR, serif;
 }
 
 html, body, #root {
@@ -14,4 +14,19 @@ html, body, #root {
 img {
     width: 24px;
     height: 24px;
+}
+
+@font-face {
+    font-family: 'MAXWELL_BOLD';
+    src: url("fonts/maxwell.bold.ttf");
+}
+
+@font-face {
+    font-family: 'MAXWELL_REGULAR';
+    src: url("fonts/maxwell.regular.ttf");
+}
+
+@font-face {
+    font-family: 'MAXWELL_LIGHT';
+    src: url("fonts/maxwell.light.ttf");
 }
