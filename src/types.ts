@@ -5,7 +5,7 @@ export interface User {
     licenses_key?: Array<string>,
     avatar?: string,
     isAdmin?: boolean,
-    status: Number,
+    status: number,
     creditCard: {[key: string]: string},
 }
 
@@ -13,8 +13,9 @@ export interface Product {
     name: string,
     releaseDate: Date,
     version: string,
-    price: Number,
+    price: number,
     pack: string,
+    picture: string,
     studentDiscounts?: boolean,
     specialDiscounts?: boolean,
     key: string,
@@ -24,16 +25,16 @@ export interface Payments {
     id: string
     recipient: User,
     sender: User,
-    amount: Number,
+    amount: number,
 }
 
 export interface Message {
-    id: Number,
+    id: number,
     text: string,
     sender: User,
     recipient: string,
     content: Array<string>,
-    reputation: Number,
+    reputation: number,
     forum: string,
 }
 
