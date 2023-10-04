@@ -62,7 +62,7 @@ const ContentBlock = () => {
                     </div>
                     <div className={commonClasses.input__wrapper}>
                         <input
-                            className={`${commonClasses.input__default} ${inputFocus === 'password' ? commonClasses.activeInput : ''}`}
+                            className={cx(commonClasses.input__default, inputFocus === 'password' ? commonClasses.activeInput : '')}
                             type="password"
                             name="userpass"
                             autoComplete="off"
