@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Root } from './shared/components/Root';
-import { RouterErrorElement } from './shared/components/RouterErrorElement';
+import { RouterErrorElement } from './shared/components/ErrorBoundary/RouterErrorElement';
 import React from 'react';
 import Cart from './shared/pages/Cart';
 import GreetingsPage from './shared/pages/Greetings';
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([{
     errorElement: <RouterErrorElement/>,
     children: [
         {
-            path: '/hello',
+            path: '/',
             element: <GreetingsPage/>
         },
         {

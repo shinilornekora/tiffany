@@ -4,7 +4,6 @@ import Header from '../../components/header';
 import cardIcon from '../../static/profile/card.png'
 import noAvatar from '../../static/profile/no-avatar.png'
 const Profile = () => {
-
     const { classes } = useStyles();
 
     return (
