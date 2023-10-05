@@ -1,6 +1,6 @@
 {
   "name": "tiffany",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@emotion/core": "^11.0.0",
@@ -8,9 +8,6 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.10",
     "@mui/styled-engine-sc": "^5.14.10",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.52",
     "@types/react": "^18.2.22",
