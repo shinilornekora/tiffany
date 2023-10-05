@@ -12,10 +12,10 @@ const Header = () => {
     return (
         <section className={classes.header}>
             <div className={classes.header__wrapper}>
-                <div className={cx(classes.header__inner, classes.header__left )}>
+                <a href="/products" className={cx(classes.header__inner, classes.header__left )}>
                     <img src={logo} alt="logo"/>
                     <p>TeamEntropy</p>
-                </div>
+                </a>
                 <div className={cx(classes.header__inner, classes.header__right)}>
                     <a href="/profile">
                         <img src={profile} alt="profile"/>

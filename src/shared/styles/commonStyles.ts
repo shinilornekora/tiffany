@@ -49,7 +49,8 @@ export const useStyles = makeStyles()(() => ({
         gap: '15px'
     },
     header__left: {
-
+        textDecoration: 'none',
+        color: 'black',
     },
     header__right: {
 
