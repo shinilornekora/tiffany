@@ -2,6 +2,8 @@ import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react';
 import { useStyles as useCommonStyles } from '../styles/commonStyles';
 import { useStyles } from '../pages/Greetings/styles';
+// import video from './title.mp4'
+
 
 type FormLogin = 'username' | 'password' | ''
 
@@ -22,7 +24,8 @@ const ContentBlock = () => {
             ref.current,
             {
                 duration: 1,
-                y: -200,
+                y: '-8vw',
+                cursor: 'auto',
                 ease: 'power3.inOut',
             },
         )
@@ -36,6 +39,7 @@ const ContentBlock = () => {
         gsap.to(
             inputRef.current,
             {
+                pointerEvents: 'auto',
                 opacity: 1,
                 duration: 2,
             }
@@ -43,12 +47,20 @@ const ContentBlock = () => {
     }, [show])
 
     return (
+        <div className={classes.wrapper}>
+            <div className={classes.bg__container}>
+                <div className={classes.bg__overlay}>
+                    <video className={classes.bg__player} autoPlay muted loop>
+                        {/*<source src={video} type="video/mp4"/>*/}
+                    </video>
+                </div>
+            </div>
             <div className={commonClasses.content__wrapper}>
                 <div ref={ref} onClick={() => setLoginActive(true)} className={commonClasses.content__textblock}>
                     <p className={commonClasses.greetings__slider}>Welcome to TeamEntropy</p>
                     <p className={commonClasses.greetings__description}>An endless world of possibilities in soundscape design</p>
                 </div>
-                <form action="#" method="post" className={cx(commonClasses.content__wrapper, classes.startInputWrapper)} ref={inputRef}>
+                <form action="#" method="post" className={classes.startInputWrapper} ref={inputRef}>
                     <div className={commonClasses.input__wrapper}>
                         <input
                             className={`${commonClasses.input__default} ${inputFocus === 'username' ? commonClasses.activeInput : ''}`}
@@ -73,6 +85,7 @@ const ContentBlock = () => {
                     </div>
                 </form>
             </div>
+        </div>
     );
 };
 
