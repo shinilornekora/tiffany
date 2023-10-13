@@ -13,21 +13,21 @@ const Header = () => {
         <section className={classes.header}>
             <div className={classes.header__wrapper}>
                 <a href="/products" className={cx(classes.header__inner, classes.header__left )}>
-                    <img src={logo} alt="logo"/>
+                    <img className={classes.header__logo} src={logo} alt="logo"/>
                     <p>TeamEntropy</p>
                 </a>
                 <div className={cx(classes.header__inner, classes.header__right)}>
                     <a href="/profile">
-                        <img src={profile} alt="profile"/>
+                        <img className={classes.header__icon} src={profile} alt="profile"/>
                     </a>
                     <a href="/cart">
-                        <img src={cart} alt="cart"/>
+                        <img className={classes.header__icon} src={cart} alt="cart"/>
                     </a>
                     <a href="/forum">
-                        <img src={forum} alt="forum"/>
+                        <img className={classes.header__icon} src={forum} alt="forum"/>
                     </a>
                     <a href="/languange">
-                        <img src={globe} alt="language"/>
+                        <img className={classes.header__icon} src={globe} alt="language"/>
                     </a>
                 </div>
             </div>
