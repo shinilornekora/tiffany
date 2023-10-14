@@ -7,6 +7,7 @@ import GreetingsPage from './shared/pages/Greetings';
 import Products from './shared/pages/Products';
 import Profile from './shared/pages/Profile';
 import Card from './shared/pages/Card';
+import Branches from "./shared/pages/Branches";
 
 export const router = createBrowserRouter([{
     path: '/',
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([{
         {
             path: '/profile',
             element: <Profile/>
+        },
+        {
+            path: '/branches',
+            element: <Branches/>
         },
     ].flat()
 }])
