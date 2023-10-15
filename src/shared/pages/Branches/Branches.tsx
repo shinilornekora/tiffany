@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { CSSProperties, MouseEventHandler } from 'react';
 import TopItem from "./TopItem";
+import BottomItems from "./BottomItems";
 
 interface ReactArrowProps {
     className?: string;
@@ -41,8 +42,10 @@ const Branches = () => {
     const {classes} = useStyles();
     const { classes: commonClasses } = useCommonStyles();
     const TopItemQuantity = 15;
+    const BottomItemQuantity = 15;
     const topItems = Array.from({ length: TopItemQuantity }, (_, index) => <TopItem key={index} />);
-    const settings = {
+    const bottomItems = Array.from({length: BottomItemQuantity}, (_, index) => <BottomItems key={index} />);
+    const settingsTop = {
         dots: false,
         infinite: false,
         speed: 300,
@@ -107,15 +110,66 @@ const Branches = () => {
             }
         ]
     };
+    const settingsBottom = {
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        prevArrow: <SamplePrevArrow />,
+        nextArrow: <SampleNextArrow />,
+        responsive: [
+            {
+                breakpoint: 5000,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 3500,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    };
     return (
         <>
             <Header/>
             <div className={classes.branches__blockForTopWrapper}>
-                <Slider {...settings} className={classes.branches__blockForTop}>
+                <Slider {...settingsTop} className={classes.branches__blockForTop}>
                     {topItems}
                 </Slider>
             </div>
             <div className={classes.branches__blockForBottomWrapper}>
+                <Slider {...settingsBottom} className={classes.branches__blockForBottom}>
+                    {bottomItems}
+                </Slider>
             </div>
         </>
     );

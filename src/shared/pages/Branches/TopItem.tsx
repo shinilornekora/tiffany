@@ -5,7 +5,7 @@ const TopItem = () => {
     const {classes} = useStyles();
     return (
         <div className={classes.branches__blockForTopItem}>
-            <h3>Andromeda1</h3>
+            <span>Andromeda1</span>
         </div>
     );
 }
