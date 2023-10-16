@@ -12,22 +12,22 @@ const Header = () => {
     return (
         <section className={classes.header}>
             <div className={classes.header__wrapper}>
-                <a href="/products" className={cx(classes.header__inner, classes.header__left )}>
+                <a href="/branches" className={cx(classes.header__inner, classes.header__left )}>
                     <img className={classes.header__logo} src={logo} alt="logo"/>
                     <p>TeamEntropy</p>
                 </a>
                 <div className={cx(classes.header__inner, classes.header__right)}>
-                    <a href="/profile">
-                        <img className={classes.header__icon} src={profile} alt="profile"/>
+                    <a href="/profile" className={classes.header__icon}>
+                        <img src={profile} alt="profile"/>
                     </a>
-                    <a href="/cart">
-                        <img className={classes.header__icon} src={cart} alt="cart"/>
+                    <a href="/cart" className={classes.header__icon}>
+                        <img src={cart} alt="cart"/>
                     </a>
-                    <a href="/forum">
-                        <img className={classes.header__icon} src={forum} alt="forum"/>
+                    <a href="/forum" className={classes.header__icon}>
+                        <img src={forum} alt="forum"/>
                     </a>
-                    <a href="/languange">
-                        <img className={classes.header__icon} src={globe} alt="language"/>
+                    <a href="/languange" className={classes.header__icon}>
+                        <img src={globe} alt="language"/>
                     </a>
                 </div>
             </div>

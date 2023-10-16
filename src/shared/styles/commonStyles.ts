@@ -38,7 +38,7 @@ export const useStyles = makeStyles()(() => ({
         position: 'fixed',
         zIndex: '1000',
         background: '#FFFFFA',
-        height: '5vw',
+        height: '50px',
         top: '0',
         width: '100%',
         left: '0',
@@ -48,7 +48,7 @@ export const useStyles = makeStyles()(() => ({
         display: 'flex',
         height: '100%',
         justifyContent: 'space-between',
-        padding: '0 15px',
+        padding: '0 2vw',
         alignItems: 'center',
         position: 'relative',
     },
@@ -56,22 +56,27 @@ export const useStyles = makeStyles()(() => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: '1vw'
+        gap: '10px',
+        height: "100%"
     },
     header__logo: {
-        width: '3vw',
-        height: '3vw'
+        width: '90%',
+        height: '90%'
     },
     header__icon: {
-        width: '1.8vw',
-        height: '1.8vw'
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
     },
     header__left: {
         textDecoration: 'none',
         color: 'black',
-        fontSize: '2vw'
+        fontSize: '20px'
     },
     header__right: {
+        height: "100%"
 
     },
     input__default: {
