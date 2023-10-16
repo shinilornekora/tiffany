@@ -48,7 +48,7 @@ export const useStyles = makeStyles()(() => ({
         display: 'flex',
         height: '100%',
         justifyContent: 'space-between',
-        padding: '0 15px',
+        padding: '0 2vw',
         alignItems: 'center',
         position: 'relative',
     },
@@ -72,6 +72,7 @@ export const useStyles = makeStyles()(() => ({
         fontSize: '2vw'
     },
     header__right: {
+        height: "100%"
 
     },
     input__default: {

@@ -4,9 +4,9 @@ import { RouterErrorElement } from './shared/components/ErrorBoundary/RouterErro
 import React from 'react';
 import Cart from './shared/pages/Cart';
 import GreetingsPage from './shared/pages/Greetings';
-import Products from './shared/pages/Products';
 import Profile from './shared/pages/Profile';
 import Card from './shared/pages/Card';
+import Branches from "./shared/pages/Branches";
 
 export const router = createBrowserRouter([{
     path: '/',
@@ -22,16 +22,16 @@ export const router = createBrowserRouter([{
             element: <Cart/>
         },
         {
-            path: '/products',
-            element: <Products/>
-        },
-        {
             path: '/product_card/:product_id',
             element: <Card/>
         },
         {
             path: '/profile',
             element: <Profile/>
+        },
+        {
+            path: '/branches',
+            element: <Branches/>
         },
     ].flat()
 }])
