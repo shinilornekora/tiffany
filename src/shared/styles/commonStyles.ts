@@ -38,7 +38,7 @@ export const useStyles = makeStyles()(() => ({
         position: 'fixed',
         zIndex: '1000',
         background: '#FFFFFA',
-        height: '50px',
+        height: '5vw',
         top: '0',
         width: '100%',
         left: '0',
@@ -56,24 +56,20 @@ export const useStyles = makeStyles()(() => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: '10px',
-        height: "100%"
+        gap: '1vw'
     },
     header__logo: {
-        width: '90%',
-        height: '90%'
+        width: '3vw',
+        height: '3vw'
     },
     header__icon: {
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center"
+        width: '1.8vw',
+        height: '1.8vw'
     },
     header__left: {
         textDecoration: 'none',
         color: 'black',
-        fontSize: '20px'
+        fontSize: '2vw'
     },
     header__right: {
         height: "100%"
