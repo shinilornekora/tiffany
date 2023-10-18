@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <section className={classes.header}>
             <div className={classes.header__wrapper}>
-                <a href="/products" className={cx(classes.header__inner, classes.header__left )}>
+                <a href="/branches" className={cx(classes.header__inner, classes.header__left )}>
                     <img className={classes.header__logo} src={logo} alt="logo"/>
                     <p>TeamEntropy</p>
                 </a>
