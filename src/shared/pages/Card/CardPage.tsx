@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Card = () => {
-    return (
-        <div>
+	return (
+		<div>
             Product card will be here)
-        </div>
-    );
+		</div>
+	);
 };
 
 export default Card;
