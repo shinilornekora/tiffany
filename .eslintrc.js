@@ -60,6 +60,8 @@ module.exports = {
 		'max-len': [
 			'error',
 			150
-		]
+		],
+		"newline-before-return": 1,
+		"no-multi-spaces": 1,
 	}
 };

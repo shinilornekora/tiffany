@@ -18,10 +18,13 @@ const apis = {
 		licenseKeys: () => axios.get('http://localhost:8080/api/products/licenses'),
 	},
 	payments: {
-		list: () => axios.get('http://localhost:8080/api/payments'),
+		list: () => axios.get('http://localhost:8080/api/payments/list'),
 	},
 	forum: {
-		messages: () => axios.get('http://localhost:8080/api/forum'),
+		messages: () => axios.get('http://localhost:8080/api/forum/messages'),
+	},
+	utils: {
+		translation: (text: string) => axios.post<{ code: 'OK', text: string }>('http://localhost:8080/api/utils/translate', { text: text }),
 	}
 };
 

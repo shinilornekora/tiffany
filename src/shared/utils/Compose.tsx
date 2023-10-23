@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
+interface Props {
+	children: ReactNode;
+	components: Array<(element: ReactNode) => ReactNode>;
+}
 
-export default function Compose(props: unknown & {children: unknown; components: Array<(element: unknown) => unknown>}) {
-
-	const { components = [] } = props;
-
-	let result = props.children;
+export default function Compose({ children, components }: Props) {
 
 	for (let i = components.length - 1; i >= 0; i--) {
 		const fn = components[i];
-		result = fn(result);
+		children = fn(children);
 	}
 
-	return <>{result}</>;
+	return <>{children}</>;
 }

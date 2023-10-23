@@ -1,13 +1,16 @@
 import React from 'react';
 import { useStyles } from './styles';
+import useTranslation from "../../utils/useTranslation";
 
 export const RouterErrorElement = () => {
 	const { classes } = useStyles();
+	const t = useTranslation();
+
 	return (
-		<div className={classes.mainWrapper}>
-			<div className={classes.errorCode}>404</div>
-			<div className={classes.errorDescription}>Oops! Seems like the page you asked doesn't exist.</div>
-			<div className={classes.errorDescription}>Check your URL once again :)</div>
+		<div className={ classes.mainWrapper }>
+			<div className={ classes.errorCode }>404</div>
+			<div className={ classes.errorDescription }>{ t('Oops! Seems like the page you asked doesn`apst`t exist.') }</div>
+			<div className={ classes.errorDescription }>Check your URL once again :)</div>
 		</div>
 	);
 };
