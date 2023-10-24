@@ -1,5 +1,4 @@
 import { useStyles } from './styles';
-<<<<<<< HEAD
 import useTranslation from '../../utils/useTranslation';
 
 
@@ -13,17 +12,5 @@ const TopItem = () => {
 		</div>
 	);
 };
-=======
-
-
-const TopItem = () => {
-    const {classes} = useStyles();
-    return (
-        <div className={classes.branches__blockForTopItem}>
-            <span>Andromeda1</span>
-        </div>
-    );
-}
->>>>>>> b1766be (Dima 3 (#13))
 
 export default TopItem;
