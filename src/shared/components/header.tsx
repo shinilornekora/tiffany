@@ -6,15 +6,17 @@ import globe from '../static/header/globe.png';
 import forum from '../static/header/users-alt.png';
 import cart from '../static/header/shopping-cart.png';
 import profile from '../static/header/user.png';
+import useTranslation from "../utils/useTranslation";
 const Header = () => {
 	const { classes, cx } = useStyles();
+	const t = useTranslation();
 
 	return (
 		<section className={classes.header}>
 			<div className={classes.header__wrapper}>
 				<a href="/branches" className={cx(classes.header__inner, classes.header__left )}>
 					<img className={classes.header__logo} src={logo} alt="logo"/>
-					<p>TeamEntropy</p>
+					<p>{ t('TeamEntropy') }</p>
 				</a>
 				<div className={cx(classes.header__inner, classes.header__right)}>
 					<a href="/profile" className={classes.header__icon}>
@@ -26,7 +28,7 @@ const Header = () => {
 					<a href="/forum" className={classes.header__icon}>
 						<img src={forum} alt="forum"/>
 					</a>
-					<a href="/languange" className={classes.header__icon}>
+					<a href="/language" className={classes.header__icon}>
 						<img src={globe} alt="language"/>
 					</a>
 				</div>
