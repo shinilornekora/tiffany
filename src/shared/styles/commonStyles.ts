@@ -19,65 +19,64 @@ export const useStyles = makeStyles()(() => ({
 		fontWeight: 'bold',
 		marginBlockEnd: 0,
 	},
-	greetings__description: {
-		fontSize: '2vw',
-	},
-	content__wrapper: {
-		position: 'absolute',
-		width: '77%',
-		height: '100vh',
-		top: '50%',
-		left: '50%',
-		transform: 'translate(-50%, -50%)',
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	header: {
-		position: 'fixed',
-		zIndex: '1000',
-		background: '#FFFFFA',
-		height: '50px',
-		top: '0',
-		width: '100%',
-		left: '0',
-		right: '0',
-	},
-	header__wrapper: {
-		display: 'flex',
-		height: '100%',
-		justifyContent: 'space-between',
-		padding: '0 2vw',
-		alignItems: 'center',
-		position: 'relative',
-	},
-	header__inner: {
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: '10px',
-		height: '100%'
-	},
-	header__logo: {
-		width: '90%',
-		height: '90%'
-	},
-	header__icon: {
-		height: '100%',
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	header__left: {
-		textDecoration: 'none',
-		color: 'black',
-		fontSize: '20px'
-	},
-	header__right: {
-		height: '100%'
-
+    greetings__description: {
+        fontSize: '2vw',
+    },
+    content__wrapper: {
+        position: 'absolute',
+        width: "77%",
+        height: '100vh',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    header: {
+        position: 'fixed',
+        zIndex: '1000',
+        background: '#FFFFFA',
+        height: '50px',
+        top: '0',
+        width: '100%',
+        left: '0',
+        right: '0',
+    },
+    header__wrapper: {
+        display: 'flex',
+        height: '100%',
+        justifyContent: 'space-between',
+        padding: '0 2vw',
+        alignItems: 'center',
+        position: 'relative',
+    },
+    header__inner: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px',
+        height: "100%"
+    },
+    header__logo: {
+        width: '90%',
+        height: '90%'
+    },
+    header__icon: {
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    header__left: {
+        textDecoration: 'none',
+        color: 'black',
+        fontSize: '20px'
+    },
+    header__right: {
+        height: "100%"
 	},
 	input__default: {
 		width: '25vw',
