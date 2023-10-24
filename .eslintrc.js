@@ -61,7 +61,8 @@ module.exports = {
 			'error',
 			150
 		],
-		"newline-before-return": 1,
-		"no-multi-spaces": 1,
+		'newline-before-return': 1,
+		'no-multi-spaces': 1,
+		'no-useless-computed-key': 1,
 	}
 };

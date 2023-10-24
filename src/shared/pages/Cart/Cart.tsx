@@ -35,11 +35,16 @@ const Cart = () => {
 			key: '1',
 		}
 	];
+
 	return (
 		<div>
 			<Header/>
 			{
-				temporaryProducts.map((product) => <ElementToBuy { ...product } />)
+				temporaryProducts.map((product) => (
+					<div key={product.key}>
+						<ElementToBuy {...product} />
+					</div>
+				))
 			}
 		</div>
 	);

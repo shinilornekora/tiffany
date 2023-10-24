@@ -1,7 +1,11 @@
+import useTranslation from '../../utils/useTranslation';
+
 const Card = () => {
+	const t = useTranslation();
+
 	return (
 		<div>
-            Product card will be here)
+			{ t('Product card will be here') }
 		</div>
 	);
 };

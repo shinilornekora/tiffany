@@ -1,11 +1,14 @@
 import { useStyles } from './styles';
+import useTranslation from '../../utils/useTranslation';
 
 
 const TopItem = () => {
-	const {classes} = useStyles();
+	const { classes } = useStyles();
+	const t = useTranslation();
+
 	return (
-		<div className={classes.branches__blockForTopItem}>
-			<span>Andromeda1</span>
+		<div className={ classes.branches__blockForTopItem }>
+			<span>{ t('Andromeda1') }</span>
 		</div>
 	);
 };

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Product } from '../../../types';
 import { useStyles } from './styles';
-const ElementToBuy = ({ name, price, picture }: Product) => {
+import useTranslation from '../../utils/useTranslation';
 
+
+const ElementToBuy = ({ name, price, picture }: Product) => {
 	const { classes } = useStyles();
+	const t = useTranslation();
 
 	return (
 		<div className={classes.cardWrapper}>
@@ -18,7 +21,7 @@ const ElementToBuy = ({ name, price, picture }: Product) => {
 					</div>
 					<div className={classes.actionBlock}>
 						<a href="#">
-                            Open product card
+							{ t('Open product card') }
 						</a>
 					</div>
 				</div>

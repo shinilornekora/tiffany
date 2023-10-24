@@ -9,6 +9,7 @@ import SliderBottom from './SliderBottom';
 export default function Branches() {
 	const TopItemQuantity = 15;
 	const BottomItemQuantity = 15;
+
 	return (
 		<>
 			<Header/>
