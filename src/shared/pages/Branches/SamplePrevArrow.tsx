@@ -1,4 +1,3 @@
-
 import React, {CSSProperties} from 'react';
 
 interface ReactArrowProps {
@@ -8,6 +7,7 @@ interface ReactArrowProps {
 }
 
 const SamplePrevArrow = ({ className, style, onClick }: ReactArrowProps) => {
+
 	return (
 		<div
 			className={className}

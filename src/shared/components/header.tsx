@@ -7,7 +7,6 @@ import forum from '../static/header/users-alt.png';
 import cart from '../static/header/shopping-cart.png';
 import profile from '../static/header/user.png';
 import useTranslation from '../utils/useTranslation';
-
 const Header = () => {
 	const { classes, cx } = useStyles();
 	const t = useTranslation();
