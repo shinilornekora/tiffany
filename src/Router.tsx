@@ -6,7 +6,7 @@ import Cart from './shared/pages/Cart';
 import GreetingsPage from './shared/pages/Greetings';
 import Profile from './shared/pages/Profile';
 import Card from './shared/pages/Card';
-import Branches from './shared/pages/Branches';
+import { Branches } from './shared/pages/Branches';
 
 export const router = createBrowserRouter([{
 	path: '/',

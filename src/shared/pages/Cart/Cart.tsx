@@ -1,50 +1,34 @@
 import React from 'react';
+
 import Header from '../../components/header';
-import { Product } from '../../../types';
 import ElementToBuy from './ElementToBuy';
+
+import cn from 'classnames';
+import { useGlobalStyles } from '../../styles/globalStyles';
+import { useStyles } from './styles';
+
+
+import { TemporaryProducts } from './Samples';
 // import apis from '../../../apis';
 
 const Cart = () => {
 	// const productList = apis.product.list()
-	const temporaryProducts: Product[] = [
-		{
-			name: 'Andromeda',
-			releaseDate: new Date('03-03-2022'),
-			version: '1.0.0',
-			price: 100,
-			pack: 'first',
-			picture: '#',
-			key: '1',
-		},
-		{
-			name: 'Andromeda1',
-			releaseDate: new Date('03-03-2022'),
-			version: '1.0.0',
-			price: 100,
-			pack: 'first',
-			picture: '#',
-			key: '1',
-		},
-		{
-			name: 'Andromeda2',
-			releaseDate: new Date('03-03-2022'),
-			version: '1.0.0',
-			price: 100,
-			pack: 'first',
-			picture: '#',
-			key: '1',
-		}
-	];
+	const { classes } = useStyles();
+	const { classes: globalClasses } = useGlobalStyles();
 
 	return (
 		<div>
 			<Header/>
 			{
-				temporaryProducts.map((product) => (
-					<div key={product.key}>
-						<ElementToBuy {...product} />
-					</div>
-				))
+				<div className={
+					cn(globalClasses.container, globalClasses.pageMargin, classes.cards)
+				}>
+					{ TemporaryProducts.map((product) => (
+						<div key={ product.key }>
+							<ElementToBuy { ...product } />
+						</div>
+					)) }
+				</div>
 			}
 		</div>
 	);

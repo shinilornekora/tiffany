@@ -1,14 +1,18 @@
 import { makeStyles } from '../../../style';
 
 export const useStyles = makeStyles()(() => ({
+	cards: {
+		display: 'flex',
+		flexDirection: 'column',
+		gap: '15px'
+	},
 	cardWrapper: {
-		margin: '15px',
 		borderRadius: '6px',
 		border: '1px solid #FFF',
 		display: 'flex',
 		flexDirection: 'row',
 		color: 'white',
-		padding: '10px 0'
+		padding: '10px 0',
 	},
 	cardDescription: {
 		display: 'flex',

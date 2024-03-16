@@ -6,7 +6,7 @@ import SliderTop from './SliderTop';
 import SliderBottom from './SliderBottom';
 
 
-export default function Branches() {
+export const Branches = () => {
 	const TopItemQuantity = 15;
 	const BottomItemQuantity = 15;
 
@@ -17,4 +17,4 @@ export default function Branches() {
 			<SliderBottom itemsQuantity={BottomItemQuantity}/>
 		</>
 	);
-}
+};

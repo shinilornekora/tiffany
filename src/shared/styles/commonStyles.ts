@@ -48,7 +48,6 @@ export const useStyles = makeStyles()(() => ({
 		display: 'flex',
 		height: '100%',
 		justifyContent: 'space-between',
-		padding: '0 2vw',
 		alignItems: 'center',
 		position: 'relative',
 	},
@@ -68,7 +67,8 @@ export const useStyles = makeStyles()(() => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		cursor: 'pointer',
 	},
 	header__left: {
 		textDecoration: 'none',
