@@ -9,10 +9,9 @@ import { useStyles } from './styles';
 
 
 import { TemporaryProducts } from './Samples';
-// import apis from '../../../apis';
+
 
 const Cart = () => {
-	// const productList = apis.product.list()
 	const { classes } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
 

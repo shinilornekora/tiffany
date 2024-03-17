@@ -43,3 +43,5 @@ export interface Forum {
     theme: string,
     tags: Array<string>,
 }
+
+export type ApiResponse = Record<string, string>;
