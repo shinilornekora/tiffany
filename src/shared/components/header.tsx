@@ -6,7 +6,7 @@ import logo from '../static/header/logo.png';
 import language from '../static/header/language.svg';
 import cart from '../static/header/cart.svg';
 import userSettings from '../static/header/settings.svg';
-import useTranslation from '../utils/useTranslation';
+import useTranslation from '../../translations/useTranslation';
 import { SettingsPopup } from './SettingsPopup';
 import { useGlobalStyles } from '../styles/globalStyles';
 

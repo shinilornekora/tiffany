@@ -1,4 +1,4 @@
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 const Card = () => {
 	const t = useTranslation();

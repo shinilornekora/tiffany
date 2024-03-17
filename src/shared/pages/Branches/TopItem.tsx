@@ -1,5 +1,5 @@
 import { useStyles } from './styles';
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 
 const TopItem = () => {

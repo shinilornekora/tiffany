@@ -3,7 +3,7 @@ import { useStyles } from './styles';
 import Header from '../../components/header';
 import cardIcon from '../../static/profile/card.png';
 import noAvatar from '../../static/profile/no-avatar.png';
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 
 const Profile = () => {

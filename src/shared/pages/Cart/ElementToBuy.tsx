@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product } from '../../../types';
 import { useStyles } from './styles';
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 
 const ElementToBuy = ({ name, price, picture }: Product) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStyles } from './styles';
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 export const SettingsPopup = () => {
 	const { classes } = useStyles();

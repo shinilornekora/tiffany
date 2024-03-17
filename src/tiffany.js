@@ -7,7 +7,9 @@ if (!localStorage.getItem('authToken')) {
  * TODO: она должна быть доступна только в dev-режиме
  *
  * info - выводит статус тиффани - если включена.
- * logAsAdmin - инициализирует статус админа
+ * logAsAdmin - инициализирует статус админа.
+ * language - глобальная переменная языка - не хочется полагаться чисто на реакт здесь
+ * ErrorLog - отправление ошибок рантайма в дэшборды
  */
 window['Tiffany'] = {
 	info: () => {
@@ -17,6 +19,11 @@ window['Tiffany'] = {
 		localStorage.setItem('authToken', 'superuser_2004');
 
 		return 'Now you are logged as Admin. Bless you!';
+	},
+	language: 'en',
+	ErrorLog: (text) => {
+		// eslint-disable-next-line no-console
+		return console.error(text);
 	}
 };
 
