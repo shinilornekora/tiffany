@@ -24,6 +24,10 @@ window['Tiffany'] = {
 	ErrorLog: (text) => {
 		// eslint-disable-next-line no-console
 		return console.error(text);
+	},
+	log: (text) => {
+		// eslint-disable-next-line no-console
+		return console.log(text);
 	}
 };
 

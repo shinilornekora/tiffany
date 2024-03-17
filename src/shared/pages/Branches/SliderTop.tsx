@@ -16,6 +16,8 @@ const SliderTop = ({ itemsQuantity }: SliderProps) => {
 		<TopItem key={index} />
 	));
 
+	Tiffany.log(items);
+
 	const {classes} = useStyles();
 
 	const settings = {

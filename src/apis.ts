@@ -1,6 +1,7 @@
 import axios from 'axios';
 import type { ApiResponse } from './types';
 
+const host = ''
 const server = 'http://localhost:8080'
 //TODO: Надо написать хендлер ошибок апи, иначе мы постоянно будем рушить сервак при плохом урле.
 

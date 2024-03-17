@@ -5,4 +5,5 @@ declare const Tiffany: {
     logAsAdmin: () => string,
     language: 'en' | 'ru',
     ErrorLog: (text: string) => void,
+    log: (text: any) => void,
 };

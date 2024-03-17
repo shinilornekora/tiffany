@@ -49,4 +49,17 @@ export const useStyles = makeStyles()(() => ({
 			fontSize: '40px',
 		}
 	},
+	content: {
+		width: '100%',
+		height: '100%',
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center',
+		gap: '25px'
+	},
+	image: {
+		width: '90%',
+		height: '80%'
+	}
 }));
