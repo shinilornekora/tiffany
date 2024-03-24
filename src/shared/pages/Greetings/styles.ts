@@ -10,7 +10,7 @@ export const useStyles = makeStyles()(() => ({
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '15px',
-		alignItems: 'center'
+		alignItems: 'center',
 	},
 	bg__container: {
 		width: '100%',

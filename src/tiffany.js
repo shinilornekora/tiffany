@@ -34,19 +34,21 @@ window['Tiffany'] = {
 	},
 
 	loginSafe: () => {
-		this.log('I hope you know what are you doing, sweetheart.\nKeep it up.');
+		window['Tiffany'].log(
+			'I hope you know what are you doing, sweetheart.\nKeep it up.',
+		);
 
 		// Это не наркомания. Оптимизируем наши рендеры!
-		this.loginDevFunc()();
+		window['Tiffany']._loginDevFunc()();
 	},
 
 	logoutSafe: () => {
-		this.log('\'Till next time, sweetheart!');
-		this.logoutDevFunc()();
+		window['Tiffany'].log('Till next time, sweetheart!');
+		window['Tiffany']._logoutDevFunc()();
 	},
 
-	globalDevCall: function (fn, params) {
-		this.log('I hope you know what are you doing, sweetheart.');
+	globalDevCall: (fn, params) => {
+		window['Tiffany'].log('I hope you know what are you doing, sweetheart.');
 
 		return () => fn(params);
 	},

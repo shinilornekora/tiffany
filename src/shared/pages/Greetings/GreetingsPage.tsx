@@ -9,8 +9,14 @@ export const GreetingsPage = () => {
 	const { classes } = useStyles();
 	const { login, logout } = useAuth();
 
-	Tiffany.loginDevFunc = useCallback(() => Tiffany.globalDevCall(login, { user: 'user' }), []);
-	Tiffany.logoutDevFunc = useCallback(() => Tiffany.globalDevCall(logout), []);
+	Tiffany._loginDevFunc = useCallback(
+		() => Tiffany.globalDevCall(login, { user: 'user' }),
+		[],
+	);
+	Tiffany._logoutDevFunc = useCallback(
+		() => Tiffany.globalDevCall(logout),
+		[],
+	);
 
 	return (
 		<div className={classes.content}>

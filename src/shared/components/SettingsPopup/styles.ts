@@ -32,6 +32,6 @@ export const useStyles = makeStyles()(() => ({
 	buttons: {
 		display: 'flex',
 		flexDirection: 'column',
-		gap: '15px'
-	}
+		gap: '15px',
+	},
 }));

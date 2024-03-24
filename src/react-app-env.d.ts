@@ -2,8 +2,8 @@
 
 declare const Tiffany: {
 	info: () => never;
-	loginDevFunc: () => void;
-	logoutDevFunc: () => void;
+	_loginDevFunc: () => void;
+	_logoutDevFunc: () => void;
 	logout: () => void;
 	language: 'en' | 'ru';
 	ErrorLog: (text: string) => void;

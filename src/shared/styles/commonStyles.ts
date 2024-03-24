@@ -142,8 +142,8 @@ export const useStyles = makeStyles()(() => ({
 	greatings__changeForm: {
 		marginTop: '40px',
 		textAlign: 'center',
-		'span': {
-			cursor: 'pointer'
-		}
-	}
+		span: {
+			cursor: 'pointer',
+		},
+	},
 }));

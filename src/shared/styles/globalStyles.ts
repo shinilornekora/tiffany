@@ -15,7 +15,7 @@ export const useGlobalStyles = makeStyles()(() => ({
 		padding: 0,
 		textAlign: 'left',
 		textDecoration: 'none',
-		textIndent: 0
+		textIndent: 0,
 	},
 	container: {
 		maxWidth: '1920px',
@@ -40,6 +40,6 @@ export const useGlobalStyles = makeStyles()(() => ({
 		borderRadius: '15px',
 		textDecoration: 'none',
 		backgroundColor: '#2E2D2D',
-		cursor: 'pointer'
-	}
+		cursor: 'pointer',
+	},
 }));

@@ -5,9 +5,7 @@ import { useStyles } from '../pages/Greetings/styles';
 import { useGlobalStyles } from '../styles/globalStyles';
 import useTranslation from '../../translations/useTranslation';
 
-
 type FormLogin = 'username' | 'password' | 'name' | '';
-
 
 const ContentBlock = () => {
 	const { classes: commonClasses } = useCommonStyles();
@@ -25,15 +23,12 @@ const ContentBlock = () => {
 		if (!logInActive) {
 			return;
 		}
-		gsap.to(
-			ref.current,
-			{
-				duration: 1,
-				y: '-150px',
-				cursor: 'auto',
-				ease: 'power3.inOut',
-			},
-		);
+		gsap.to(ref.current, {
+			duration: 1,
+			y: '-150px',
+			cursor: 'auto',
+			ease: 'power3.inOut',
+		});
 		setTimeout(() => setShow(true), 400);
 	}, [logInActive]);
 
@@ -48,7 +43,8 @@ const ContentBlock = () => {
 		});
 	}, [show]);
 
-	const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState<boolean>(false);
+	const [isRegistrationFormVisible, setIsRegistrationFormVisible] =
+		useState<boolean>(false);
 
 	const handleShowRegistrationForm = () => {
 		setIsRegistrationFormVisible(true);
@@ -82,15 +78,22 @@ const ContentBlock = () => {
 				</div>
 				{isRegistrationFormVisible ? (
 					// Форма регистрации
-					<div className={commonClasses.greatings__formWrapper} ref={inputRef}>
-						<form action="#" method="post" className={classes.startInputWrapper} >
+					<div
+						className={commonClasses.greatings__formWrapper}
+						ref={inputRef}
+					>
+						<form
+							action='#'
+							method='post'
+							className={classes.startInputWrapper}
+						>
 							<div className={commonClasses.input__wrapper}>
 								<input
 									className={`${commonClasses.input__default} ${inputFocus === 'name' ? commonClasses.activeInput : ''}`}
-									type="text"
-									name="personName"
-									autoComplete="off"
-									placeholder="name"
+									type='text'
+									name='personName'
+									autoComplete='off'
+									placeholder='name'
 									onFocus={() => setInputFocus('name')}
 									onBlur={() => {}}
 								/>
@@ -98,30 +101,41 @@ const ContentBlock = () => {
 							<div className={commonClasses.input__wrapper}>
 								<input
 									className={`${commonClasses.input__default} ${inputFocus === 'username' ? commonClasses.activeInput : ''}`}
-									type="text"
-									name="username"
-									autoComplete="off"
-									placeholder="login"
+									type='text'
+									name='username'
+									autoComplete='off'
+									placeholder='login'
 									onFocus={() => setInputFocus('username')}
 									onBlur={() => {}}
 								/>
 							</div>
 							<div className={commonClasses.input__wrapper}>
 								<input
-									className={cx(commonClasses.input__default, inputFocus === 'password' ? commonClasses.activeInput : '')}
-									type="password"
-									name="userpass"
-									autoComplete="off"
-									placeholder="password"
+									className={cx(
+										commonClasses.input__default,
+										inputFocus === 'password'
+											? commonClasses.activeInput
+											: '',
+									)}
+									type='password'
+									name='userpass'
+									autoComplete='off'
+									placeholder='password'
 									onFocus={() => setInputFocus('password')}
 									onBlur={() => {}}
 								/>
 							</div>
 							<div>
-								<button className={globalClasses.button} type="submit" >{ t('Register') }</button>
+								<button
+									className={globalClasses.button}
+									type='submit'
+								>
+									{t('Register')}
+								</button>
 							</div>
 						</form>
-						<div className={commonClasses.greatings__changeForm}>{t('Уже есть аккаунт? ')}
+						<div className={commonClasses.greatings__changeForm}>
+							{t('Уже есть аккаунт? ')}
 							<span onClick={handleShowLoginForm}>
 								{t('Войти!')}
 							</span>
@@ -129,35 +143,53 @@ const ContentBlock = () => {
 					</div>
 				) : (
 					// Форма авторизации
-					<div className={commonClasses.greatings__formWrapper} ref={inputRef}>
-						<form action="#" method="post" className={classes.startInputWrapper}>
+					<div
+						className={commonClasses.greatings__formWrapper}
+						ref={inputRef}
+					>
+						<form
+							action='#'
+							method='post'
+							className={classes.startInputWrapper}
+						>
 							<div className={commonClasses.input__wrapper}>
 								<input
 									className={`${commonClasses.input__default} ${inputFocus === 'username' ? commonClasses.activeInput : ''}`}
-									type="text"
-									name="username"
-									autoComplete="off"
-									placeholder="login"
+									type='text'
+									name='username'
+									autoComplete='off'
+									placeholder='login'
 									onFocus={() => setInputFocus('username')}
 									onBlur={() => {}}
 								/>
 							</div>
 							<div className={commonClasses.input__wrapper}>
 								<input
-									className={cx(commonClasses.input__default, inputFocus === 'password' ? commonClasses.activeInput : '')}
-									type="password"
-									name="userpass"
-									autoComplete="off"
-									placeholder="password"
+									className={cx(
+										commonClasses.input__default,
+										inputFocus === 'password'
+											? commonClasses.activeInput
+											: '',
+									)}
+									type='password'
+									name='userpass'
+									autoComplete='off'
+									placeholder='password'
 									onFocus={() => setInputFocus('password')}
 									onBlur={() => {}}
 								/>
 							</div>
 							<div>
-								<button className={globalClasses.button} type="submit" >{ t('Log in') }</button>
+								<button
+									className={globalClasses.button}
+									type='submit'
+								>
+									{t('Log in')}
+								</button>
 							</div>
 						</form>
-						<div className={commonClasses.greatings__changeForm}>{t('Нет аккаунта? ')}
+						<div className={commonClasses.greatings__changeForm}>
+							{t('Нет аккаунта? ')}
 							<span onClick={handleShowRegistrationForm}>
 								{t('Зарегистрироваться!')}
 							</span>
