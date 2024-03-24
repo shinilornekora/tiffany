@@ -10,20 +10,18 @@ export const useStyles = makeStyles()(() => ({
 		cursor: 'pointer',
 	},
 	greetings__slider: {
-		fontSize: '5vw',
+		fontSize: '72px',
 		fontWeight: 'bold',
 		marginBlockEnd: 0,
 	},
 	greetings__description: {
-		fontSize: '2vw',
+		fontSize: '28px',
 	},
 	content__wrapper: {
 		position: 'absolute',
-		width: '77%',
-		height: '100vh',
-		top: '50%',
+		top: '60%',
 		left: '50%',
-		transform: 'translate(-50%, -50%)',
+		transform: 'translate(-50%, -40%)',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
@@ -74,15 +72,15 @@ export const useStyles = makeStyles()(() => ({
 		height: '100%'
 	},
 	input__default: {
-		width: '25vw',
-		height: '4vw',
+		width: '300px',
+		height: '50px',
 		textDecoration: 'none !important',
 		outline: 'none !important',
 		border: 'none !important',
 		WebkitTextFillColor: 'inherit !important',
 		WebkitBoxShadow: '0 0 0px 1000px inherit inset',
 		transition: 'background-color 5000s ease-in-out 0s',
-		fontSize: '1.6vw',
+		fontSize: '20px',
 		color: 'inherit',
 		backgroundColor: 'transparent !important',
 		'&::-webkit-input-placeholder': {
@@ -126,10 +124,21 @@ export const useStyles = makeStyles()(() => ({
 		},
 	},
 	input__wrapper: {
-		margin: '4vh',
 		backgroundColor: 'rgb(255, 255, 255, 0.3)',
 	},
 	activeInput: {
 		borderBottom: '1px solid #000 !important',
 	},
+	greatings__formWrapper: {
+		display: 'block',
+		pointerEvents: 'none',
+		opacity: 0,
+	},
+	greatings__changeForm: {
+		marginTop: '40px',
+		textAlign: 'center',
+		'span': {
+			cursor: 'pointer'
+		}
+	}
 }));

@@ -7,9 +7,10 @@ export const useStyles = makeStyles()(() => ({
 		height: '100%',
 	},
 	startInputWrapper: {
-		height: '100px',
-		pointerEvents: 'none',
-		opacity: 0,
+		display: 'flex',
+		flexDirection: 'column',
+		gap: '15px',
+		alignItems: 'center'
 	},
 	bg__container: {
 		width: '100%',

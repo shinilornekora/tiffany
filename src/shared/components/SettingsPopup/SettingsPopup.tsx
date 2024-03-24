@@ -1,9 +1,13 @@
 import React from 'react';
 import { useStyles } from './styles';
+import { useGlobalStyles } from '../../styles/globalStyles';
+
 import useTranslation from '../../utils/useTranslation';
 
 export const SettingsPopup = () => {
 	const { classes } = useStyles();
+	const { classes: globalClasses } = useGlobalStyles();
+
 	const t = useTranslation();
 
 	return (
@@ -13,9 +17,9 @@ export const SettingsPopup = () => {
 				<div className={ classes.email }>example@mail.ru</div>
 			</div>
 			<div className={ classes.buttons }>
-				<a href="/profile" className={ classes.button }> { t('Edit profile data') } </a>
-				<a href="/forum" className={ classes.button }> { t('Go to forum page') } </a>
-				<a href="/" className={ classes.button }> { t('Check my plugins') } </a>
+				<a href="/profile" className={ globalClasses.button }> { t('Edit profile data') } </a>
+				<a href="/forum" className={ globalClasses.button }> { t('Go to forum page') } </a>
+				<a href="/" className={ globalClasses.button }> { t('Check my plugins') } </a>
 			</div>
 		</div>
 	);
