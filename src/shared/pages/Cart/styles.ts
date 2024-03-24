@@ -4,7 +4,7 @@ export const useStyles = makeStyles()(() => ({
 	cards: {
 		display: 'flex',
 		flexDirection: 'column',
-		gap: '15px'
+		gap: '15px',
 	},
 	cardWrapper: {
 		borderRadius: '6px',

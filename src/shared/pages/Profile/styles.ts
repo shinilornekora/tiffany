@@ -46,6 +46,6 @@ export const useStyles = makeStyles()(() => ({
 		'& img': {
 			width: '50px',
 			height: '43px',
-		}
+		},
 	},
 }));

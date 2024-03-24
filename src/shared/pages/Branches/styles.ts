@@ -4,29 +4,29 @@ export const useStyles = makeStyles()(() => ({
 	branches__blockForTop: {
 		width: '90%',
 		margin: '0 auto',
-		alignSelf: 'center'
+		alignSelf: 'center',
 	},
 	branches__blockForTopItem: {
 		color: '#D9D9D9',
 		textAlign: 'center',
-		'span': {
-			cursor: 'pointer'
-		}
+		span: {
+			cursor: 'pointer',
+		},
 	},
 	branches__blockForTopWrapper: {
 		height: '55px',
 		display: 'flex',
 		borderBottom: '4px solid #D9D9D9',
-		marginTop: '50px'
+		marginTop: '50px',
 	},
 	branches__blockForBottomWrapper: {
 		height: 'calc(100vh - 105px)',
-		display: 'flex'
+		display: 'flex',
 	},
 	branches__blockForBottom: {
 		width: '90%',
 		margin: '0 auto',
-		alignSelf: 'center'
+		alignSelf: 'center',
 	},
 	branches__blockForBottomItem: {
 		display: 'block',
@@ -37,7 +37,7 @@ export const useStyles = makeStyles()(() => ({
 		height: 'calc(100vh - 150px)',
 		position: 'relative',
 		'::before': {
-			content: '\'\'',
+			content: "''",
 			position: 'absolute',
 			top: '0px',
 			left: '0px',
@@ -47,7 +47,7 @@ export const useStyles = makeStyles()(() => ({
 		},
 		' span': {
 			fontSize: '40px',
-		}
+		},
 	},
 	content: {
 		width: '100%',
@@ -56,10 +56,10 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-		gap: '25px'
+		gap: '25px',
 	},
 	image: {
 		width: '90%',
-		height: '80%'
-	}
+		height: '80%',
+	},
 }));

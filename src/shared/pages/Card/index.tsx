@@ -1,3 +1,1 @@
-import Card from './CardPage';
-
-export default Card;
+export * from './CardPage';

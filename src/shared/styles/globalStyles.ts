@@ -17,5 +17,5 @@ export const useGlobalStyles = makeStyles()(() => ({
 	},
 	pageMargin: {
 		margin: '100px auto 0 auto !important',
-	}
+	},
 }));

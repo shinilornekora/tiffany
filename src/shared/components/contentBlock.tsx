@@ -4,8 +4,7 @@ import { useStyles as useCommonStyles } from '../styles/commonStyles';
 import { useStyles } from '../pages/Greetings/styles';
 // import video from './title.mp4'
 
-
-type FormLogin = 'username' | 'password' | ''
+type FormLogin = 'username' | 'password' | '';
 
 const ContentBlock = () => {
 	const { classes: commonClasses } = useCommonStyles();
@@ -20,15 +19,12 @@ const ContentBlock = () => {
 		if (!logInActive) {
 			return;
 		}
-		gsap.to(
-			ref.current,
-			{
-				duration: 1,
-				y: '-8vw',
-				cursor: 'auto',
-				ease: 'power3.inOut',
-			},
-		);
+		gsap.to(ref.current, {
+			duration: 1,
+			y: '-8vw',
+			cursor: 'auto',
+			ease: 'power3.inOut',
+		});
 		setTimeout(() => setShow(true), 400);
 	}, [logInActive]);
 
@@ -36,14 +32,11 @@ const ContentBlock = () => {
 		if (!show) {
 			return;
 		}
-		gsap.to(
-			inputRef.current,
-			{
-				pointerEvents: 'auto',
-				opacity: 1,
-				duration: 2,
-			}
-		);
+		gsap.to(inputRef.current, {
+			pointerEvents: 'auto',
+			opacity: 1,
+			duration: 2,
+		});
 	}, [show]);
 
 	return (
@@ -56,29 +49,47 @@ const ContentBlock = () => {
 				</div>
 			</div>
 			<div className={commonClasses.content__wrapper}>
-				<div ref={ref} onClick={() => setLoginActive(true)} className={commonClasses.content__textblock}>
-					<p className={commonClasses.greetings__slider}>Welcome to TeamEntropy</p>
-					<p className={commonClasses.greetings__description}>An endless world of possibilities in soundscape design</p>
+				<div
+					ref={ref}
+					onClick={() => setLoginActive(true)}
+					className={commonClasses.content__textblock}
+				>
+					<p className={commonClasses.greetings__slider}>
+						Welcome to TeamEntropy
+					</p>
+					<p className={commonClasses.greetings__description}>
+						An endless world of possibilities in soundscape design
+					</p>
 				</div>
-				<form action="#" method="post" className={classes.startInputWrapper} ref={inputRef}>
+				<form
+					action='#'
+					method='post'
+					className={classes.startInputWrapper}
+					ref={inputRef}
+				>
 					<div className={commonClasses.input__wrapper}>
 						<input
 							className={`${commonClasses.input__default} ${inputFocus === 'username' ? commonClasses.activeInput : ''}`}
-							type="text"
-							name="username"
-							autoComplete="off"
-							placeholder="login"
+							type='text'
+							name='username'
+							autoComplete='off'
+							placeholder='login'
 							onFocus={() => setInputFocus('username')}
 							onBlur={() => {}}
 						/>
 					</div>
 					<div className={commonClasses.input__wrapper}>
 						<input
-							className={cx(commonClasses.input__default, inputFocus === 'password' ? commonClasses.activeInput : '')}
-							type="password"
-							name="userpass"
-							autoComplete="off"
-							placeholder="password"
+							className={cx(
+								commonClasses.input__default,
+								inputFocus === 'password'
+									? commonClasses.activeInput
+									: '',
+							)}
+							type='password'
+							name='userpass'
+							autoComplete='off'
+							placeholder='password'
 							onFocus={() => setInputFocus('password')}
 							onBlur={() => {}}
 						/>

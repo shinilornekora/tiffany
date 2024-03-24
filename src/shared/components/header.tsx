@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import { useStyles } from '../styles/commonStyles';
 import cn from 'classnames';
 
@@ -15,25 +15,39 @@ const Header = () => {
 	const { classes: globalClasses } = useGlobalStyles();
 	const t = useTranslation();
 	const [settingsVisible, setSettingsVisible] = useState<boolean>(false);
-	const handlePopup = useCallback(() => setSettingsVisible(!settingsVisible), [setSettingsVisible, settingsVisible]);
+	const handlePopup = useCallback(
+		() => setSettingsVisible(!settingsVisible),
+		[setSettingsVisible, settingsVisible],
+	);
 
 	return (
-		<section className={ classes.header }>
-			{ settingsVisible && <SettingsPopup /> }
-			<div className={ cn(classes.header__wrapper, globalClasses.container) }>
-				<a href="/branches" className={ cx(classes.header__inner, classes.header__left ) }>
-					<img className={ classes.header__logo } src={logo} alt="logo"/>
-					<p>{ t('TeamEntropy') }</p>
+		<section className={classes.header}>
+			{settingsVisible && <SettingsPopup />}
+			<div
+				className={cn(classes.header__wrapper, globalClasses.container)}
+			>
+				<a
+					href='/branches'
+					className={cx(classes.header__inner, classes.header__left)}
+				>
+					<img
+						className={classes.header__logo}
+						src={logo}
+						alt='logo'
+					/>
+					<p>{t('TeamEntropy')}</p>
 				</a>
-				<div className={cx(classes.header__inner, classes.header__right)}>
-					<a href="/language" className={ classes.header__icon }>
-						<img src={language} alt="language"/>
+				<div
+					className={cx(classes.header__inner, classes.header__right)}
+				>
+					<a href='/language' className={classes.header__icon}>
+						<img src={language} alt='language' />
 					</a>
-					<a href="/cart" className={ classes.header__icon }>
-						<img src={cart} alt="cart"/>
+					<a href='/cart' className={classes.header__icon}>
+						<img src={cart} alt='cart' />
 					</a>
-					<div onClick={ handlePopup } className={ classes.header__icon }>
-						<img src={ userSettings } alt="profile"/>
+					<div onClick={handlePopup} className={classes.header__icon}>
+						<img src={userSettings} alt='profile' />
 					</div>
 				</div>
 			</div>

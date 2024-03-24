@@ -27,5 +27,5 @@ export const TemporaryProducts: Product[] = [
 		pack: 'first',
 		picture: '#',
 		key: '1',
-	}
+	},
 ];

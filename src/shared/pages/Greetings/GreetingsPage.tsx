@@ -3,15 +3,13 @@ import Header from '../../components/header';
 import ContentBlock from '../../components/contentBlock';
 import { useStyles } from '../../styles/commonStyles';
 
-const GreetingsPage = () => {
-	const {classes} = useStyles();
+export const GreetingsPage = () => {
+	const { classes } = useStyles();
 
 	return (
 		<div className={classes.content}>
-			<Header/>
-			<ContentBlock/>
+			<Header />
+			<ContentBlock />
 		</div>
 	);
 };
-
-export default GreetingsPage;

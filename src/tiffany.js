@@ -21,13 +21,12 @@ window['Tiffany'] = {
 		return 'Now you are logged as Admin. Bless you!';
 	},
 	language: 'en',
-	ErrorLog: (text) => {
+	ErrorLog: text => {
 		// eslint-disable-next-line no-console
 		return console.error(text);
 	},
-	log: (text) => {
+	log: text => {
 		// eslint-disable-next-line no-console
 		return console.log(text);
-	}
+	},
 };
-

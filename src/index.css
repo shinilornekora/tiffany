@@ -1,32 +1,34 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: MAXWELL_REGULAR, serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: MAXWELL_REGULAR, serif;
 }
 
-html, body, #root {
-    height: 100%;
-    width: 100%;
-    background: #2E2D2D;
+html,
+body,
+#root {
+	height: 100%;
+	width: 100%;
+	background: #2e2d2d;
 }
 
 img {
-    width: 24px;
-    height: 24px;
+	width: 24px;
+	height: 24px;
 }
 
 @font-face {
-    font-family: 'MAXWELL_BOLD';
-    src: url("fonts/maxwell.bold.ttf");
+	font-family: 'MAXWELL_BOLD';
+	src: url('fonts/maxwell.bold.ttf');
 }
 
 @font-face {
-    font-family: 'MAXWELL_REGULAR';
-    src: url("fonts/maxwell.regular.ttf");
+	font-family: 'MAXWELL_REGULAR';
+	src: url('fonts/maxwell.regular.ttf');
 }
 
 @font-face {
-    font-family: 'MAXWELL_LIGHT';
-    src: url("fonts/maxwell.light.ttf");
+	font-family: 'MAXWELL_LIGHT';
+	src: url('fonts/maxwell.light.ttf');
 }
