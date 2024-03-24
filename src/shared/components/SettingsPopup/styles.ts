@@ -32,15 +32,6 @@ export const useStyles = makeStyles()(() => ({
 	buttons: {
 		display: 'flex',
 		flexDirection: 'column',
-	},
-	button: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		fontSize: '32px',
-		color: '#fff',
-		padding: '35px 75px',
-		borderRadius: '15px',
-		textDecoration: 'none',
-	},
+		gap: '15px'
+	}
 }));
