@@ -1,12 +1,12 @@
-import { useStyles } from '../styles/commonStyles';
+// import { useStyles } from '../styles/commonStyles';
 import React from 'react';
 import { Outlet } from 'react-router';
 
 export const Root = () => {
-	const {classes} = useStyles();
+	// const {classes} = useStyles();
 
 	return (
-		<div className={classes.content}>
+		<div>
 			<Outlet/>
 		</div>
 	);

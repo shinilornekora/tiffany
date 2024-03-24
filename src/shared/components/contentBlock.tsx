@@ -3,12 +3,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useStyles as useCommonStyles } from '../styles/commonStyles';
 import { useStyles } from '../pages/Greetings/styles';
 // import video from './title.mp4'
+import { useGlobalStyles } from '../styles/globalStyles';
+
 
 
 type FormLogin = 'username' | 'password' | ''
 
 const ContentBlock = () => {
 	const { classes: commonClasses } = useCommonStyles();
+	const { classes: globalClasses } = useGlobalStyles();
+
 	const { classes, cx } = useStyles();
 	const ref = useRef(null);
 	const inputRef = useRef(null);
@@ -48,7 +52,7 @@ const ContentBlock = () => {
 
 	return (
 		<div className={classes.wrapper}>
-			<div className={classes.bg__container}>
+			<div className={globalClasses.container}>
 				<div className={classes.bg__overlay}>
 					<video className={classes.bg__player} autoPlay muted loop>
 						{/*<source src={video} type="video/mp4"/>*/}

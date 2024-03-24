@@ -1,11 +1,6 @@
 import { makeStyles } from '../../style';
 
 export const useStyles = makeStyles()(() => ({
-	content: {
-		display: 'flex',
-		flexDirection: 'column',
-		height: '100%',
-	},
 	content__textblock: {
 		display: 'flex',
 		flexDirection: 'column',
