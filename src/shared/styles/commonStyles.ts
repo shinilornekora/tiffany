@@ -1,6 +1,11 @@
 import { makeStyles } from '../../style';
 
 export const useStyles = makeStyles()(() => ({
+	content: {
+		display: 'flex',
+		flexDirection: 'column',
+		height: '100%',
+	},
 	content__textblock: {
 		display: 'flex',
 		flexDirection: 'column',
@@ -49,11 +54,11 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'row',
 		alignItems: 'center',
 		gap: '10px',
-		height: '100%'
+		height: '100%',
 	},
 	header__logo: {
 		width: '90%',
-		height: '90%'
+		height: '90%',
 	},
 	header__icon: {
 		height: '100%',
@@ -66,10 +71,10 @@ export const useStyles = makeStyles()(() => ({
 	header__left: {
 		textDecoration: 'none',
 		color: 'black',
-		fontSize: '20px'
+		fontSize: '20px',
 	},
 	header__right: {
-		height: '100%'
+		height: '100%',
 	},
 	input__default: {
 		width: '300px',

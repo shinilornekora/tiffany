@@ -1,6 +1,6 @@
 {
   "name": "tiffany",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/core": "^11.0.0",
@@ -15,7 +15,7 @@
     "axios": "^1.5.0",
     "emotion": "^11.0.0",
     "gsap": "^3.12.2",
-    "prettier": "^3.0.3",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.16.0",
@@ -29,6 +29,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prettier": "prettier .prettierrc.json \"./src\" --write --single-quote --trailing-comma all",
+    "linter": "eslint --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

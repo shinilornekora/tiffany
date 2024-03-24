@@ -1,8 +1,7 @@
 import React from 'react';
 import { useStyles } from './styles';
 import { useGlobalStyles } from '../../styles/globalStyles';
-
-import useTranslation from '../../utils/useTranslation';
+import useTranslation from '../../../translations/useTranslation';
 
 export const SettingsPopup = () => {
 	const { classes } = useStyles();
@@ -11,15 +10,24 @@ export const SettingsPopup = () => {
 	const t = useTranslation();
 
 	return (
-		<div className={ classes.popup }>
-			<div className={ classes.detailsContainer }>
-				<div className={ classes.username }>Username</div>
-				<div className={ classes.email }>example@mail.ru</div>
+		<div className={classes.popup}>
+			<div className={classes.detailsContainer}>
+				<div className={classes.username}>Username</div>
+				<div className={classes.email}>example@mail.ru</div>
 			</div>
-			<div className={ classes.buttons }>
-				<a href="/profile" className={ globalClasses.button }> { t('Edit profile data') } </a>
-				<a href="/forum" className={ globalClasses.button }> { t('Go to forum page') } </a>
-				<a href="/" className={ globalClasses.button }> { t('Check my plugins') } </a>
+			<div className={classes.buttons}>
+				<a href='/profile' className={globalClasses.button}>
+					{' '}
+					{t('Edit profile data')}{' '}
+				</a>
+				<a href='/forum' className={globalClasses.button}>
+					{' '}
+					{t('Go to forum page')}{' '}
+				</a>
+				<a href='/' className={globalClasses.button}>
+					{' '}
+					{t('Check my plugins')}{' '}
+				</a>
 			</div>
 		</div>
 	);

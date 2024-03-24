@@ -5,7 +5,7 @@ export const useStyles = makeStyles()(() => ({
 		display: 'flex',
 		height: '100%',
 		alignItems: 'center',
-		justifyContent: 'flex-start',
+		justifyContent: 'center',
 	},
 	profileContentWrapper: {
 		display: 'flex',
@@ -46,6 +46,6 @@ export const useStyles = makeStyles()(() => ({
 		'& img': {
 			width: '50px',
 			height: '43px',
-		}
+		},
 	},
 }));

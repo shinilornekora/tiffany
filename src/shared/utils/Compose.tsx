@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
 	children: ReactNode;
@@ -6,7 +6,6 @@ interface Props {
 }
 
 export default function Compose({ children, components }: Props) {
-
 	for (let i = components.length - 1; i >= 0; i--) {
 		const fn = components[i];
 		children = fn(children);

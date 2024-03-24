@@ -1,3 +1,1 @@
-import GreetingsPage from './GreetingsPage';
-
-export default GreetingsPage;
+export * from './GreetingsPage';

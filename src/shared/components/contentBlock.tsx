@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useStyles as useCommonStyles } from '../styles/commonStyles';
 import { useStyles } from '../pages/Greetings/styles';
 import { useGlobalStyles } from '../styles/globalStyles';
-import useTranslation from '../utils/useTranslation';
-
+import useTranslation from '../../translations/useTranslation';
 
 
 type FormLogin = 'username' | 'password' | 'name' | '';
+
 
 const ContentBlock = () => {
 	const { classes: commonClasses } = useCommonStyles();
@@ -41,14 +41,11 @@ const ContentBlock = () => {
 		if (!show) {
 			return;
 		}
-		gsap.to(
-			inputRef.current,
-			{
-				pointerEvents: 'auto',
-				opacity: 1,
-				duration: 2,
-			}
-		);
+		gsap.to(inputRef.current, {
+			pointerEvents: 'auto',
+			opacity: 1,
+			duration: 2,
+		});
 	}, [show]);
 
 	const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState<boolean>(false);
@@ -71,9 +68,17 @@ const ContentBlock = () => {
 				</div>
 			</div>
 			<div className={commonClasses.content__wrapper}>
-				<div ref={ref} onClick={() => setLoginActive(true)} className={commonClasses.content__textblock}>
-					<p className={commonClasses.greetings__slider}>Welcome to TeamEntropy</p>
-					<p className={commonClasses.greetings__description}>An endless world of possibilities in soundscape design</p>
+				<div
+					ref={ref}
+					onClick={() => setLoginActive(true)}
+					className={commonClasses.content__textblock}
+				>
+					<p className={commonClasses.greetings__slider}>
+						Welcome to TeamEntropy
+					</p>
+					<p className={commonClasses.greetings__description}>
+						An endless world of possibilities in soundscape design
+					</p>
 				</div>
 				{isRegistrationFormVisible ? (
 					// Форма регистрации

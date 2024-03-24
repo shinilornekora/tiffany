@@ -17,5 +17,5 @@ export const useStyles = makeStyles()(() => ({
 		fontSize: '2vw',
 		color: 'white',
 		textAlign: 'center',
-	}
+	},
 }));

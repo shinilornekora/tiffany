@@ -1,4 +1,4 @@
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import SamplePrevArrow from './SamplePrevArrow';
 import SampleNextArrow from './SampleNextArrow';
 import Slider from 'react-slick';
@@ -6,13 +6,15 @@ import React from 'react';
 import BottomItems from './BottomItems';
 
 interface SliderProps {
-    itemsQuantity: number;
+	itemsQuantity: number;
 }
 
 const SliderBottom = ({ itemsQuantity }: SliderProps) => {
-	const items = Array.from({length: itemsQuantity}, (_, index) => <BottomItems key={index} />);
+	const items = Array.from({ length: itemsQuantity }, (_, index) => (
+		<BottomItems key={index} />
+	));
 
-	const {classes} = useStyles();
+	const { classes } = useStyles();
 
 	const settings = {
 		dots: false,
@@ -28,39 +30,39 @@ const SliderBottom = ({ itemsQuantity }: SliderProps) => {
 				breakpoint: 5000,
 				settings: {
 					slidesToShow: 6,
-				}
+				},
 			},
 			{
 				breakpoint: 3500,
 				settings: {
 					slidesToShow: 4,
-				}
+				},
 			},
 			{
 				breakpoint: 1500,
 				settings: {
 					slidesToShow: 3,
-				}
+				},
 			},
 			{
 				breakpoint: 1500,
 				settings: {
 					slidesToShow: 3,
-				}
+				},
 			},
 			{
 				breakpoint: 900,
 				settings: {
 					slidesToShow: 2,
-				}
+				},
 			},
 			{
 				breakpoint: 500,
 				settings: {
 					slidesToShow: 1,
-				}
+				},
 			},
-		]
+		],
 	};
 
 	return (

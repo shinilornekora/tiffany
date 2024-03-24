@@ -1,7 +1,7 @@
 import { makeStyles } from '../../../style';
 
 export const useStyles = makeStyles()(() => ({
-	'popup': {
+	popup: {
 		position: 'absolute',
 		top: '50px',
 		right: '50px',
@@ -13,23 +13,23 @@ export const useStyles = makeStyles()(() => ({
 		background: 'rgb(19, 19, 17)',
 		width: '475px',
 		height: '580px',
-		borderRadius: '15px'
+		borderRadius: '15px',
 	},
-	'username': {
+	username: {
 		fontSize: '44px',
 		color: '#fff',
 	},
-	'email': {
+	email: {
 		fontSize: '24px',
 		color: 'rgba(242, 242, 242, 45%)',
 	},
-	'detailsContainer': {
+	detailsContainer: {
 		fontFamily: 'Jost, sans-serif',
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '8px',
 	},
-	'buttons': {
+	buttons: {
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '15px'

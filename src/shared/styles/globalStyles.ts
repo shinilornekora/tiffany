@@ -29,7 +29,7 @@ export const useGlobalStyles = makeStyles()(() => ({
 	pageMargin: {
 		margin: '100px auto 0 auto !important',
 	},
-	'button': {
+	button: {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
