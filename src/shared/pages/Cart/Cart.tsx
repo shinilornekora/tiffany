@@ -29,6 +29,7 @@ export const Cart = () => {
 					</div>
 				))}
 			</div>
+			<div className='totalPrice'>check</div>
 		</div>
 	);
 };

@@ -6,7 +6,9 @@ import { useLocalStorage } from './useLocalStorage';
 import { PRProps } from '../components/protectRoute';
 
 type AuthProps = {
-	user?: any;
+	user?: string;
+	login?: (data: Record<string, string>) => Promise<void>;
+	logout?: () => void;
 };
 
 const AuthContext = createContext<AuthProps>({});
@@ -15,7 +17,7 @@ export const AuthProvider = ({ children }: PRProps) => {
 	const [user, setUser] = useLocalStorage('user', null);
 	const navigate = useNavigate();
 
-	const login = async (data: any) => {
+	const login = async (data: Record<string, string>) => {
 		setUser(data);
 		navigate('/profile');
 	};
@@ -33,6 +35,7 @@ export const AuthProvider = ({ children }: PRProps) => {
 		}),
 		[user],
 	);
+
 	return (
 		<AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 	);
