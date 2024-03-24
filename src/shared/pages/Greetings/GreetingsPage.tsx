@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Header from '../../components/header';
 import ContentBlock from '../../components/contentBlock';
 
-<<<<<<< HEAD
-const GreetingsPage = () => {
-	return (
-		<div>
-			<Header/>
-			<ContentBlock/>
-=======
+import { useStyles } from '../../styles/commonStyles';
+import { useAuth } from '../../hooks/useAuth';
+
 export const GreetingsPage = () => {
 	const { classes } = useStyles();
+	const { login, logout } = useAuth();
+
+	Tiffany.loginDevFunc = useCallback(() => Tiffany.globalDevCall(login, { user: 'user' }), []);
+	Tiffany.logoutDevFunc = useCallback(() => Tiffany.globalDevCall(logout), []);
 
 	return (
 		<div className={classes.content}>
 			<Header />
 			<ContentBlock />
->>>>>>> 3ff8973b945342e55b1f551c839756eb8f358071
 		</div>
 	);
 };
