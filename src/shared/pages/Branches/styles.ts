@@ -37,7 +37,7 @@ export const useStyles = makeStyles()(() => ({
 		height: 'calc(100vh - 150px)',
 		position: 'relative',
 		'::before': {
-			content: "''",
+			content: '\'\'',
 			position: 'absolute',
 			top: '0px',
 			left: '0px',

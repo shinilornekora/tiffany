@@ -13,9 +13,9 @@ body,
 	background: #2e2d2d;
 }
 
-img {
-	width: 24px;
-	height: 24px;
+a {
+	color: inherit; /* blue colors for links too */
+	text-decoration: inherit; /* no underline */
 }
 
 @font-face {
