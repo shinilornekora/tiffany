@@ -11,7 +11,7 @@ interface SliderProps {
 
 const SliderBottom = ({ itemsQuantity }: SliderProps) => {
 	const items = Array.from({ length: itemsQuantity }, (_, index) => (
-		<BottomItems key={index} />
+		<BottomItems key={index} productId={index + 1} />
 	));
 
 	const { classes } = useStyles();

@@ -17,7 +17,7 @@ export const Card = () => {
 	return (
 		<div>
 			<Header />
-			<div className={cx(globalClasses.container, classes.card__margin)}>
+			<div className={cx(globalClasses.container, globalClasses.pageMargin)}>
 				<div className={classes.card__flexWrapper}>
 					<div className={classes.card__img}>
 						<img src={cardImg} alt='img'/>

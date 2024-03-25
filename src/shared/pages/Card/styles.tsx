@@ -1,10 +1,6 @@
 import { makeStyles } from '../../../style';
 
 export const useStyles = makeStyles()(() => ({
-	card__margin: {
-		marginTop: '70px',
-		height: '100%'
-	},
 	card__flexWrapper: {
 		display: 'flex',
 		gap: '15px',
