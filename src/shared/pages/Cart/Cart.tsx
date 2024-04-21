@@ -16,20 +16,30 @@ export const Cart = () => {
 	return (
 		<div>
 			<Header />
-			<div
-				className={cn(
-					globalClasses.container,
-					globalClasses.pageMargin,
-					classes.cards,
-				)}
-			>
-				{TemporaryProducts.map(product => (
-					<div key={product.key}>
-						<ElementToBuy {...product} />
-					</div>
-				))}
+			<div className={ globalClasses.container }>
+				<div
+					className={cn(
+						globalClasses.pageMargin,
+						classes.cards,
+					)}
+				>
+					{TemporaryProducts.map(product => (
+						<div key={product.key}>
+							<ElementToBuy {...product} />
+						</div>
+					))}
+				</div>
+				<div className={classes.cart__totalPrice}>
+					<p className={classes.cart__price}>
+						<span>Total: </span>
+						<span id='totalPrice'>60</span>
+						<span>$</span>
+					</p>
+					<p className={classes.cart__goToPay}>
+						<a href={'#'}>Proceed to checkout</a>
+					</p>
+				</div>
 			</div>
-			<div className='totalPrice'>check</div>
 		</div>
 	);
 };

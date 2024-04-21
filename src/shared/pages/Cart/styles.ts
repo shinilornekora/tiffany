@@ -43,4 +43,17 @@ export const useStyles = makeStyles()(() => ({
 		},
 		paddingLeft: '10px',
 	},
+	cart__totalPrice: {
+		position: 'absolute',
+		right: '15px',
+		bottom: '15px',
+		padding: '10px',
+		backgroundColor: '#fff',
+		border: '2px solid #000',
+		borderRadius: '5px',
+		fontSize: '20px',
+		lineHeight: '28px'
+	},
+	cart__price: {},
+	cart__goToPay: {}
 }));

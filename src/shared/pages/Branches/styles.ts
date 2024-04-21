@@ -20,7 +20,6 @@ export const useStyles = makeStyles()(() => ({
 		marginTop: '50px',
 	},
 	branches__blockForBottomWrapper: {
-		height: 'calc(100vh - 105px)',
 		display: 'flex',
 	},
 	branches__blockForBottom: {
@@ -34,10 +33,9 @@ export const useStyles = makeStyles()(() => ({
 		color: '#D9D9D9',
 		textAlign: 'right',
 		paddingRight: '15px',
-		height: 'calc(100vh - 150px)',
 		position: 'relative',
 		'::before': {
-			content: "''",
+			content: '\'\'',
 			position: 'absolute',
 			top: '0px',
 			left: '0px',
@@ -60,6 +58,38 @@ export const useStyles = makeStyles()(() => ({
 	},
 	image: {
 		width: '90%',
-		height: '80%',
+		textAlign: 'center',
+		'img': {
+			maxWidth: '100%',
+			margin: '0 auto',
+		},
+		position: 'relative'
 	},
+	darkImg: {
+		opacity: '0.3',
+	},
+	branches__contentDescription: {
+		position: 'absolute',
+		bottom: '30px',
+		zIndex: '1000',
+		left: '50%',
+		transform: 'translateX(-50%)',
+		transition: 'opacity 0.3s ease',
+		opacity: '0',
+		'.visibleDescription': {
+			opacity: '1'
+		}
+	},
+	visibleDescription: {
+		opacity: '1'
+	},
+	branches__contentDescriptionTitle: {
+		fontSize: '20px',
+		fontWeight: '700',
+		marginBottom: '15px'
+	},
+	branches__contentDescriptionText: {
+		fontSize: '16px',
+		fontWeight: '400'
+	}
 }));
