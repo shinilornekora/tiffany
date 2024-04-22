@@ -4,8 +4,7 @@ import { useStyles as useCommonStyles } from '../styles/commonStyles';
 import { useStyles } from '../pages/Greetings/styles';
 import { useGlobalStyles } from '../styles/globalStyles';
 import useTranslation from '../../translations/useTranslation';
-import { registerUser } from '../../apis';
-import { loginUser } from '../../apis';
+import { registerUser, useLoginUser } from '../../apis';
 
 type FormLogin = 'username' | 'password' | 'name' | '';
 
@@ -62,20 +61,18 @@ const ContentBlock = () => {
 
 		const formData = new FormData(event.currentTarget);
 		const userData = {
-			personName: formData.get('personName' || '') as string,
-			username: formData.get('username' || '') as string,
-			userpass: formData.get('userpass' || '') as string,
+			// personName: formData.get('personName') as string,
+			username: formData.get('username') as string,
+			password: formData.get('userpass') as string,
 		};
 
-		try {
-			const response = await registerUser(userData); // Использование функции для регистрации из Apis.js
-			if (response.status === 200) {
-				// Успешная авторизация
-			} else {
-				// Ошибка авторизации
-			}
-		} catch (error) {
-			// Обработка ошибок
+		const response = await registerUser(userData); // Использование функции для регистрации из Apis.js
+		if (response.status === 200) {
+			// Успешная регистрация
+		} else {
+			// Ошибка регистрации
+			// eslint-disable-next-line no-console
+			console.log('ощибка');
 		}
 	};
 
@@ -84,19 +81,20 @@ const ContentBlock = () => {
 
 		const formData = new FormData(event.currentTarget);
 		const userData = {
-			username: formData.get('username' || '') as string,
-			userpass: formData.get('userpass' || '') as string,
+			username: formData.get('username') as string,
+			password: formData.get('userpass') as string,
 		};
-
-		try {
-			const response = await loginUser(userData); // Использование функции для авторизации из Apis.ts
-			if (response.status === 200) {
-				// Успешная авторизация
-			} else {
-				// Ошибка авторизации
-			}
-		} catch (error) {
-			// Обработка ошибок
+		// eslint-disable-next-line no-console
+		console.log('Пробуем регаться');
+		const response = await useLoginUser(userData); // Использование функции для авторизации из Apis.ts
+		if (response.status === 200) {
+			// Успешная авторизация
+			// eslint-disable-next-line no-console
+			console.log('Зарегались');
+		} else {
+			// Ошибка авторизации
+			// eslint-disable-next-line no-console
+			console.log('Все хуево');
 		}
 	};
 

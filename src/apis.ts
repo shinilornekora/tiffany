@@ -1,9 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import type { ApiResponse } from './types';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 
-// const host = '';
-const server = 'http://94.250.251.77';
+const server = 'http://94.250.251.77/api';
 //TODO: Надо написать хендлер ошибок апи, иначе мы постоянно будем рушить сервак при плохом урле.
 
 /**
@@ -24,85 +23,86 @@ const server = 'http://94.250.251.77';
 export const apis = {
 	user: {
 		check: (uid: string) =>
-			axios.get<ApiResponse>(`${server}/api/users/is_active?uid=${uid}`),
+			axios.get<ApiResponse>(`${server}/users/is_active?uid=${uid}`),
 		authorize: (login: string, password: string) =>
-			axios.post<ApiResponse>(`${server}/api/users/auth`, {
+			axios.post<ApiResponse>(`${server}/users/auth`, {
 				login: login,
 				password: password,
 			}),
 	},
 	branches: {
-		list: () => axios.get<ApiResponse>(`${server}/api/branches/`),
+		list: () => axios.get<ApiResponse>(`${server}/branches/`),
 		get: (id: string) =>
-			axios.get<ApiResponse>(`${server}/api/branches?id=${id}`),
+			axios.get<ApiResponse>(`${server}/branches?id=${id}`),
 	},
 	product: {
 		get: (id: string) =>
-			axios.get<ApiResponse>(`${server}/api/products?id=${id}`),
+			axios.get<ApiResponse>(`${server}/products?id=${id}`),
 		owned: (uid: string) =>
-			axios.get<ApiResponse>(`${server}/api/products/owned?uid=${uid}`),
+			axios.get<ApiResponse>(`${server}/products/owned?uid=${uid}`),
 		// licenseKeys: () => axios.get('http://localhost:8080/api/products/licenses`),
 	},
 	forum: {
-		list: () => axios.get<ApiResponse>(`${server}/api/forum`),
-		messages: () => axios.get<ApiResponse>(`${server}/api/forum/messages`),
+		list: () => axios.get<ApiResponse>(`${server}/forum`),
+		messages: () => axios.get<ApiResponse>(`${server}/forum/messages`),
 	},
 };
 
 type UserData = {
 	personName?: string;
 	username: string;
-	userpass: string;
+	password: string;
 };
 
-export const registerUser = async (userData: UserData) => {
-	const navigation = useNavigation(); // Используем хук useNavigation для получения объекта навигации
 
-	try {
-		const response: AxiosResponse = await axios.post(`${server}/api/auth/register`, userData);
-		if (response.status === 200) {
-			navigation.navigate('Login'); // Перенаправление на страницу авторизации с использованием объекта навигации
+export const registerUser = (userData: UserData) => {
 
-			return response; // Возвращаем объект ответа в случае успешной регистрации
-		} else {
-			throw new Error('Registration failed'); // Генерируем ошибку в случае неудачной регистрации
+	const config = {
+		mode: 'cors',
+		headers : {
+			'Access-Control-Allow-Origin': '*'
 		}
-	} catch (error) {
-		throw new Error('Registration failed'); // Генерируем ошибку при возникновении ошибки во время запроса
-	}
+	};
+
+	return axios.post(`${server}/auth/register`, userData, config)
+		.then((response) => {
+			if (response.status === 200) {
+				alert('Вы успешно зарегистрировались, вот ваши данные для входа');
+
+				return response; // Возвращаем объект ответа в случае успешной регистрации
+			} else {
+				throw new Error('Registration failed');
+			}
+		})
+		.catch((error) => {
+			// Обработка ошибок
+			// eslint-disable-next-line no-console
+			console.error('Ошибка при регистрации:', error);
+			throw error; // Передаем ошибку дальше для обработки в вызывающем коде
+		});
 };
 
-export const loginUser = async (userData: UserData) => {
-	const navigation = useNavigation(); // Используем хук useNavigation для получения объекта навигации
+export const useLoginUser = async (userData: UserData) => {
+	const navigate = useNavigate(); // Используем хук useNavigation для получения объекта навигации
 
-	try {
-		const response: AxiosResponse = await axios.post(`${server}/api/auth/login`, userData);
-		if (response.status === 200) {
-			navigation.navigate('/branches'); // Перенаправление на домашнюю страницу
+	const response: AxiosResponse = await axios.post(`${server}/auth/login`, userData);
+	if (response.status === 200) {
+		navigate('/profile'); // Перенаправление на страницу профиля
 
-			return response; // Возвращаем объект ответа в случае успешной авторизации
-		} else {
-			throw new Error('Login failed'); // Генерируем ошибку в случае неудачной авторизации
-		}
-	} catch (error) {
-		throw new Error('Login failed'); // Генерируем ошибку при возникновении ошибки во время запроса
+		return response; // Возвращаем объект ответа в случае успешной авторизации
+	} else {
+		throw new Error('Login failed'); // Генерируем ошибку в случае неудачной авторизации
 	}
 };
 
 export const checkTokenValidity = () => {
 	// Запуск процесса пинга бэкенда каждые 60 секунд для обновления токена
 	setInterval(async () => {
-		try {
-			const token = localStorage.getItem('token');
-			const response = await axios.post('http://94.250.251.77/api/auth/token', { token });
-			if (response.status === 200) {
-				// Токен действителен
-			} else {
-				// Токен недействителен, произвести logout и удалить токен из локального хранилища
-				localStorage.removeItem('token');
-			}
-		} catch (error) {
-			// Обработка ошибок
+		const token = localStorage.getItem('token');
+		const response = await axios.post(`${server}/auth/token`, { token });
+		if (response.status !== 200) {
+			// Токен недействителен, произвести logout и удалить токен из локального хранилища
+			localStorage.removeItem('token');
 		}
 	}, 60000);
 };
