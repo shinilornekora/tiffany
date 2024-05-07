@@ -16,13 +16,8 @@ export const Cart = () => {
 	return (
 		<div>
 			<Header />
-			<div className={ globalClasses.container }>
-				<div
-					className={cn(
-						globalClasses.pageMargin,
-						classes.cards,
-					)}
-				>
+			<div className={globalClasses.container}>
+				<div className={cn(globalClasses.pageMargin, classes.cards)}>
 					{TemporaryProducts.map(product => (
 						<div key={product.key}>
 							<ElementToBuy {...product} />

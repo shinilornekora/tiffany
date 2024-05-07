@@ -18,6 +18,8 @@ export const useStyles = makeStyles()(() => ({
 		fontSize: '72px',
 		fontWeight: 'bold',
 		marginBlockEnd: 0,
+		textAlign: 'center',
+		minWidth: '900px',
 	},
 	greetings__description: {
 		fontSize: '28px',
@@ -82,6 +84,8 @@ export const useStyles = makeStyles()(() => ({
 		textDecoration: 'none !important',
 		outline: 'none !important',
 		border: 'none !important',
+		borderRadius: '20px',
+		padding: '5px 20px',
 		WebkitTextFillColor: 'inherit !important',
 		WebkitBoxShadow: '0 0 0px 1000px inherit inset',
 		transition: 'background-color 5000s ease-in-out 0s',
@@ -130,6 +134,7 @@ export const useStyles = makeStyles()(() => ({
 	},
 	input__wrapper: {
 		backgroundColor: 'rgb(255, 255, 255, 0.3)',
+		borderRadius: '20px',
 	},
 	activeInput: {
 		borderBottom: '1px solid #000 !important',

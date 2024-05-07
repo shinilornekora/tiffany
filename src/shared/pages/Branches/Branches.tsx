@@ -11,7 +11,6 @@ export const Branches = () => {
 	const BottomItemQuantity = 15;
 	const { classes: globalClasses } = useGlobalStyles();
 
-
 	return (
 		<>
 			<Header />

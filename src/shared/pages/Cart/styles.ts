@@ -52,8 +52,8 @@ export const useStyles = makeStyles()(() => ({
 		border: '2px solid #000',
 		borderRadius: '5px',
 		fontSize: '20px',
-		lineHeight: '28px'
+		lineHeight: '28px',
 	},
 	cart__price: {},
-	cart__goToPay: {}
+	cart__goToPay: {},
 }));

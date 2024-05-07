@@ -37,11 +37,20 @@ const BottomItems: React.FC<BottomItemsProps> = ({ productId }) => {
 						id={`productText_${productId}`}
 						className={`${classes.branches__contentDescription} ${isHovered ? classes.visibleDescription : ''}`}
 					>
-						<h4 className={classes.branches__contentDescriptionTitle}>Andromeda: Series FIR</h4>
-						<p className={classes.branches__contentDescriptionText}>Andromeda: FIR gives you stability
-							of a fine-tuned FIR filter, which you can customise.
-							Largest benefit of AS: FIR is very low CPU usage in Linear Phase Mode.
-							AS: FIR gives you a nice workflow to edit your sounds quickly.</p>
+						<h4
+							className={
+								classes.branches__contentDescriptionTitle
+							}
+						>
+							Andromeda: Series FIR
+						</h4>
+						<p className={classes.branches__contentDescriptionText}>
+							Andromeda: FIR gives you stability of a fine-tuned
+							FIR filter, which you can customise. Largest benefit
+							of AS: FIR is very low CPU usage in Linear Phase
+							Mode. AS: FIR gives you a nice workflow to edit your
+							sounds quickly.
+						</p>
 					</div>
 				</div>
 				<span>Product item content</span>

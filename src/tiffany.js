@@ -48,7 +48,9 @@ window['Tiffany'] = {
 	},
 
 	globalDevCall: (fn, params) => {
-		window['Tiffany'].log('I hope you know what are you doing, sweetheart.');
+		window['Tiffany'].log(
+			'I hope you know what are you doing, sweetheart.',
+		);
 
 		return () => fn(params);
 	},

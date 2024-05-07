@@ -59,11 +59,11 @@ export const useStyles = makeStyles()(() => ({
 	image: {
 		width: '90%',
 		textAlign: 'center',
-		'img': {
+		img: {
 			maxWidth: '100%',
 			margin: '0 auto',
 		},
-		position: 'relative'
+		position: 'relative',
 	},
 	darkImg: {
 		opacity: '0.3',
@@ -77,19 +77,19 @@ export const useStyles = makeStyles()(() => ({
 		transition: 'opacity 0.3s ease',
 		opacity: '0',
 		'.visibleDescription': {
-			opacity: '1'
-		}
+			opacity: '1',
+		},
 	},
 	visibleDescription: {
-		opacity: '1'
+		opacity: '1',
 	},
 	branches__contentDescriptionTitle: {
 		fontSize: '20px',
 		fontWeight: '700',
-		marginBottom: '15px'
+		marginBottom: '15px',
 	},
 	branches__contentDescriptionText: {
 		fontSize: '16px',
-		fontWeight: '400'
-	}
+		fontWeight: '400',
+	},
 }));
