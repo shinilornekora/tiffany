@@ -11,8 +11,9 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-		color: '#1E1E1E',
 		cursor: 'pointer',
+		color: '#FFFFFF',
+    	textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000',
 	},
 	greetings__slider: {
 		fontSize: '72px',
@@ -23,6 +24,8 @@ export const useStyles = makeStyles()(() => ({
 	},
 	greetings__description: {
 		fontSize: '28px',
+		letterSpacing: '1px',
+		textShadow: '-1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000'
 	},
 	content__wrapper: {
 		position: 'absolute',

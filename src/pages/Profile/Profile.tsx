@@ -8,8 +8,14 @@ import cardIcon from '../../shared/static/profile/card.png';
 import noAvatar from '../../shared/static/profile/no-avatar.png';
 
 export const Profile = () => {
-	const { classes } = useStyles();
 	const t = useTranslation();
+	
+	const { classes } = useStyles();
+
+	// Какая то логика получения данных
+	const name = 'Anatoliy';
+	const email = 'example@mail.ru';
+	const cardNumber = '****5538'
 
 	return (
 		<>
@@ -19,23 +25,15 @@ export const Profile = () => {
 					<img src={noAvatar} alt='check' className='avatar' />
 					<div className={classes.profileContentInfo}>
 						<div className={classes.profileContentInfoBlock}>
-							<div
-								className={classes.profileContentInfoBlockName}
-							>
-								{t('Anatoliy')}
+							<div className={classes.profileContentInfoBlockName}>
+								{name}
 							</div>
-							<div
-								className={classes.profileContentInfoBlockEmail}
-							>
-								{t('example@mail.ru')}
+							<div className={classes.profileContentInfoBlockEmail}>
+								{email}
 							</div>
-							<div
-								className={
-									classes.profileContentInfoBlockCreditCard
-								}
-							>
+							<div className={classes.profileContentInfoBlockCreditCard}>
 								<img src={cardIcon} alt='check' />
-								<p>****5538</p>
+								<p>{cardNumber}</p>
 							</div>
 						</div>
 						<div className={classes.profileContentInfoBlock}>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useStyles } from '../styles';
 import { useTranslation } from '../../../shared/hooks/useTranslation';
 
@@ -5,9 +7,12 @@ export const TopItem = () => {
 	const { classes } = useStyles();
 	const t = useTranslation();
 
+	// TODO: сюда прокидывать название веток
+	const pluginName = 'Andromeda'
+
 	return (
 		<div className={classes.branches__blockForTopItem}>
-			<span>{t('Andromeda1')}</span>
+			<span>{pluginName}</span>
 		</div>
 	);
 };

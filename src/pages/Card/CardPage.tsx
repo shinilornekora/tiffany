@@ -9,9 +9,13 @@ import { useTranslation } from '../../shared/hooks/useTranslation';
 import cardImg from '../../shared/static/card/cardImg.png';
 
 export const Card = () => {
+	const t = useTranslation();
+	
 	const { classes, cx } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
-	const t = useTranslation();
+	
+	// TODO: сделать проброску названия с бека, описание генерируется по нему.
+	const name = 'Andromeda: Series FIR'
 
 	return (
 		<div>
@@ -29,15 +33,10 @@ export const Card = () => {
 					<div className={classes.card__content}>
 						<div className={classes.card__description}>
 							<h1 className={classes.card__descriptionTitle}>
-								{t('Andromeda: Series FIR')}
+								{name}
 							</h1>
 							<p className={classes.card__descriptionText}>
-								{t(
-									'Andromeda: FIR gives you stability of a fine-tuned FIR filter,' +
-										' which you can customise. \n' +
-										'Largest benefit of AS: FIR is very low CPU usage in Linear Phase Mode. \n' +
-										'AS: FIR gives you a nice workflow to edit your sounds quickly.',
-								)}
+								{t(name)}
 							</p>
 						</div>
 						<div className={classes.card__priceItem}>
@@ -48,13 +47,13 @@ export const Card = () => {
 								href={'#'}
 								className={classes.card__priceItemElement}
 							>
-								Add to cart
+								{t('Add to cart')}
 							</a>
 							<a
 								href={'#'}
 								className={classes.card__priceItemElement}
 							>
-								View branch
+								{t('View branch')}
 							</a>
 						</div>
 					</div>

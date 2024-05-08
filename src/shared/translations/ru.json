@@ -16,5 +16,8 @@
 	"No account?": "Нет аккаунта?",
 	"Sign up!": "Зарегистрироваться!",
 	"Already have an account": "Уже есть аккаунт?",
-	"Sign in!": "Войти"
+	"Sign in!": "Войти",
+	"Add to cart": "Добавить в корзину",
+	"View branch": "Вернуться в ветку",
+	"Andromeda: Series FIR": "Andromeda: FIR gives you stability of a fine-tuned FIR filter, which you can customise.\nLargest benefit of AS: FIR is very low CPU usage in Linear Phase Mode. \nAS: FIR gives you a nice workflow to edit your sounds quickly."
 }

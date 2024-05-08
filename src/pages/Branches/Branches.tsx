@@ -1,12 +1,13 @@
+import React from 'react';
+
 import { Header } from '../../features/Header/header';
+import { SliderBottom } from './sliders/SliderBottom';
+import { SliderTop } from './sliders/SliderTop';
 
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-import { SliderTop } from './sliders/SliderTop';
-import { SliderBottom } from './sliders/SliderBottom';
+import 'slick-carousel/slick/slick.css';
 
 export const Branches = () => {
 	const { classes: globalClasses } = useGlobalStyles();
