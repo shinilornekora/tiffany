@@ -10,12 +10,12 @@ import cardImg from '../../shared/static/card/cardImg.png';
 
 export const Card = () => {
 	const t = useTranslation();
-	
+
 	const { classes, cx } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
-	
+
 	// TODO: сделать проброску названия с бека, описание генерируется по нему.
-	const name = 'Andromeda: Series FIR'
+	const name = 'Andromeda: Series FIR';
 
 	return (
 		<div>

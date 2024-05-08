@@ -6,17 +6,17 @@ export const useStyles = makeStyles()(() => ({
 		pointerEvents: 'none',
 		opacity: 1,
 	},
-    startInputWrapper: {
+	startInputWrapper: {
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '15px',
 		alignItems: 'center',
 	},
-    input__wrapper: {
+	input__wrapper: {
 		backgroundColor: 'rgb(255, 255, 255, 0.3)',
 		borderRadius: '20px',
 	},
-    input__default: {
+	input__default: {
 		width: '300px',
 		height: '50px',
 		textDecoration: 'none !important',
@@ -70,10 +70,10 @@ export const useStyles = makeStyles()(() => ({
 			height: '2px',
 		},
 	},
-    activeInput: {
+	activeInput: {
 		borderBottom: '1px solid #000 !important',
 	},
-    button: {
+	button: {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -86,12 +86,13 @@ export const useStyles = makeStyles()(() => ({
 		backgroundColor: '#2E2D2D',
 		cursor: 'pointer',
 	},
-    greatings__changeForm: {
+	greatings__changeForm: {
 		marginTop: '40px',
 		textAlign: 'center',
 		fontSize: '18px',
 		color: '#FFFFFF',
-		textShadow: '-1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000',
+		textShadow:
+			'-1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000',
 		span: {
 			cursor: 'pointer',
 			padding: '10px',

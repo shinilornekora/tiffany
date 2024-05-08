@@ -27,7 +27,7 @@ export const SliderBottom = ({ itemsQuantity }: SliderProps) => {
 		adaptiveHeight: true,
 		prevArrow: <SamplePrevArrow />,
 		nextArrow: <SampleNextArrow />,
-		responsive: responsiveConfig
+		responsive: responsiveConfig,
 	};
 
 	return (

@@ -8,7 +8,7 @@ export const TopItem = () => {
 	const t = useTranslation();
 
 	// TODO: сюда прокидывать название веток
-	const pluginName = 'Andromeda'
+	const pluginName = 'Andromeda';
 
 	return (
 		<div className={classes.branches__blockForTopItem}>

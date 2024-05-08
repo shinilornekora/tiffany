@@ -4,7 +4,7 @@
 	margin: 0;
 	font-family: Kreadon, sans-serif;
 	letter-spacing: -1px;
-}	
+}
 
 html,
 body,
@@ -46,5 +46,5 @@ a {
 
 @font-face {
 	font-family: 'Kreadon Light';
-	src: url('shared/fonts/kreadon/Kreadon_Light.ttf')
+	src: url('shared/fonts/kreadon/Kreadon_Light.ttf');
 }

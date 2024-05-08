@@ -29,7 +29,7 @@ export const SliderTop = ({ itemsQuantity }: SliderProps) => {
 		slidesToScroll: 1,
 		prevArrow: <SamplePrevArrow />,
 		nextArrow: <SampleNextArrow />,
-		responsive: responsiveConfig
+		responsive: responsiveConfig,
 	};
 
 	return (
@@ -41,7 +41,7 @@ export const SliderTop = ({ itemsQuantity }: SliderProps) => {
 	);
 };
 
-const responsiveConfig =  [
+const responsiveConfig = [
 	{
 		breakpoint: 5000,
 		settings: {

@@ -38,7 +38,7 @@ export const ContentBlock = () => {
 
 	const handleLogin = useCallback((event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-	}, [])
+	}, []);
 
 	useEffect(() => {
 		if (!logInActive) {
@@ -98,17 +98,19 @@ export const ContentBlock = () => {
 					className={commonClasses.content__textblock}
 				>
 					<p className={commonClasses.greetings__slider}>
-						{ t('Welcome to TeamEntropy') }
+						{t('Welcome to TeamEntropy')}
 					</p>
 					<p className={commonClasses.greetings__description}>
-						{ t('An endless world of possibilities in soundscape design') }
+						{t(
+							'An endless world of possibilities in soundscape design',
+						)}
 					</p>
 				</div>
-				
+
 				{/**
-				  * Выглядит так как будто этот компонент на самом деле один и тот же. 
-				  * TODO: обобщить в один и унести логику определения внутрь
-				  */}
+				 * Выглядит так как будто этот компонент на самом деле один и тот же.
+				 * TODO: обобщить в один и унести логику определения внутрь
+				 */}
 				{isRegistrationFormVisible ? (
 					<RegistryForm
 						inputFocus={inputFocus}

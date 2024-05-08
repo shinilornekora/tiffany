@@ -13,7 +13,10 @@ type AuthProps = {
 
 const AuthContext = createContext<AuthProps>({
 	user: '',
-	login: async (data) => (_data => { _data; })(data),
+	login: async data =>
+		(_data => {
+			_data;
+		})(data),
 	logout: () => {},
 });
 

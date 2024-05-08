@@ -9,13 +9,13 @@ import noAvatar from '../../shared/static/profile/no-avatar.png';
 
 export const Profile = () => {
 	const t = useTranslation();
-	
+
 	const { classes } = useStyles();
 
 	// Какая то логика получения данных
 	const name = 'Anatoliy';
 	const email = 'example@mail.ru';
-	const cardNumber = '****5538'
+	const cardNumber = '****5538';
 
 	return (
 		<>
@@ -25,13 +25,21 @@ export const Profile = () => {
 					<img src={noAvatar} alt='check' className='avatar' />
 					<div className={classes.profileContentInfo}>
 						<div className={classes.profileContentInfoBlock}>
-							<div className={classes.profileContentInfoBlockName}>
+							<div
+								className={classes.profileContentInfoBlockName}
+							>
 								{name}
 							</div>
-							<div className={classes.profileContentInfoBlockEmail}>
+							<div
+								className={classes.profileContentInfoBlockEmail}
+							>
 								{email}
 							</div>
-							<div className={classes.profileContentInfoBlockCreditCard}>
+							<div
+								className={
+									classes.profileContentInfoBlockCreditCard
+								}
+							>
 								<img src={cardIcon} alt='check' />
 								<p>{cardNumber}</p>
 							</div>

@@ -24,8 +24,14 @@ export const RegistryForm: React.FC<Props> = ({
 	const { classes, cx } = useStyles();
 
 	const nameFocus = useCallback(() => setInputFocus('name'), [setInputFocus]);
-	const usernameFocus = useCallback(() => setInputFocus('name'), [setInputFocus]);
-	const passwordFocus = useCallback(() => setInputFocus('password'), [setInputFocus]);
+	const usernameFocus = useCallback(
+		() => setInputFocus('name'),
+		[setInputFocus],
+	);
+	const passwordFocus = useCallback(
+		() => setInputFocus('password'),
+		[setInputFocus],
+	);
 
 	return (
 		<div className={classes.greatings__formWrapper} ref={inputRef}>
@@ -52,16 +58,14 @@ export const RegistryForm: React.FC<Props> = ({
 						name='username'
 						autoComplete='off'
 						placeholder='login'
-						onFocus={ usernameFocus }
+						onFocus={usernameFocus}
 					/>
 				</div>
 				<div className={classes.input__wrapper}>
 					<input
-						className={cx(
-							classes.input__default, {
-								[classes.activeInput]: inputFocus === 'password'
-							}
-						)}
+						className={cx(classes.input__default, {
+							[classes.activeInput]: inputFocus === 'password',
+						})}
 						type='password'
 						name='userpass'
 						autoComplete='off'
@@ -77,7 +81,9 @@ export const RegistryForm: React.FC<Props> = ({
 			</form>
 			<div className={classes.greatings__changeForm}>
 				{t('Already have an account?')}
-				<span onClick={handleShowLoginForm}>{`    ${t('Sign in!')}`}</span>
+				<span
+					onClick={handleShowLoginForm}
+				>{`    ${t('Sign in!')}`}</span>
 			</div>
 		</div>
 	);

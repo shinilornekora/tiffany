@@ -13,6 +13,7 @@ declare const Tiffany: {
 	ErrorLog: (text: string) => void;
 	log: (text: string) => void;
 	globalDevCall: (
-		fn: (data: RString) => Promise<void> | void, 
-		params?: RString) => () => void;
+		fn: (data: RString) => Promise<void> | void,
+		params?: RString,
+	) => () => void;
 };

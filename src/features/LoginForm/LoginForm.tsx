@@ -23,8 +23,14 @@ export const LoginForm: React.FC<Props> = ({
 	const t = useTranslation();
 	const { classes, cx } = useStyles();
 
-	const handleUsernameFocus = useCallback(() => setInputFocus('username'), [setInputFocus]);
-	const handlePasswordFocus = useCallback(() => setInputFocus('password'), [setInputFocus]);
+	const handleUsernameFocus = useCallback(
+		() => setInputFocus('username'),
+		[setInputFocus],
+	);
+	const handlePasswordFocus = useCallback(
+		() => setInputFocus('password'),
+		[setInputFocus],
+	);
 
 	return (
 		<div className={classes.greatings__formWrapper} ref={inputRef}>
@@ -37,7 +43,7 @@ export const LoginForm: React.FC<Props> = ({
 				<div className={classes.input__wrapper}>
 					<input
 						className={cx(classes.input__default, {
-							[classes.activeInput]: inputFocus === 'username'
+							[classes.activeInput]: inputFocus === 'username',
 						})}
 						type='text'
 						name='username'
@@ -48,11 +54,9 @@ export const LoginForm: React.FC<Props> = ({
 				</div>
 				<div className={classes.input__wrapper}>
 					<input
-						className={cx(
-							classes.input__default, {
-								[classes.activeInput]: inputFocus === 'password'
-							}
-						)}
+						className={cx(classes.input__default, {
+							[classes.activeInput]: inputFocus === 'password',
+						})}
 						type='password'
 						name='userpass'
 						autoComplete='off'
@@ -61,10 +65,7 @@ export const LoginForm: React.FC<Props> = ({
 					/>
 				</div>
 				<div>
-					<button
-						className={classes.button}
-						type='submit'
-					>
+					<button className={classes.button} type='submit'>
 						{t('Log in')}
 					</button>
 				</div>
