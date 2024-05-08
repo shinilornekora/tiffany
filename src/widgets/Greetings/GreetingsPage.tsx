@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Header } from '../../modules/Header/header';
-import { ContentBlock } from '../../modules/GreetBlock/contentBlock';
+import { Header } from '../../features/Header/header';
+import { ContentBlock } from '../../features/GreetBlock/GreetBlock';
 
 import { useStyles } from '../../shared/styles/commonStyles';
 import { useAuth } from '../../shared/hooks/useAuth';

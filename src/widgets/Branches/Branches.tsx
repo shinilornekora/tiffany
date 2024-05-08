@@ -1,4 +1,4 @@
-import { Header } from '../../modules/Header/header';
+import { Header } from '../../features/Header/header';
 
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStyles } from './styles';
-import Header from '../../modules/Header/header';
+import Header from '../../features/Header/header';
 import cardIcon from '../../static/profile/card.png';
 import noAvatar from '../../static/profile/no-avatar.png';
 import useTranslation from '../../translations/useTranslation';

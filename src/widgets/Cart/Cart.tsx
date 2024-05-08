@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../../modules/Header/header';
+import Header from '../../features/Header/header';
 import ElementToBuy from './ElementToBuy';
 
 import cn from 'classnames';
