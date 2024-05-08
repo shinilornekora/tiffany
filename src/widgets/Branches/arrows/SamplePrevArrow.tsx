@@ -6,7 +6,11 @@ interface ReactArrowProps {
 	onClick?: () => void;
 }
 
-export const SamplePrevArrow = ({ className, style, onClick }: ReactArrowProps) => {
+export const SamplePrevArrow = ({
+	className,
+	style,
+	onClick,
+}: ReactArrowProps) => {
 	return (
 		<div
 			className={className}

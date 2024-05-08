@@ -1,35 +1,32 @@
-import { FormEvent, Ref } from "react";
-import { FormLogin } from "../GreetBlock/GreetBlock";
-import useTranslation from "../../translations/useTranslation";
-import { useGlobalStyles } from "../../shared/styles/globalStyles";
+import { FormEvent, Ref } from 'react';
+import { FormLogin } from '../GreetBlock/GreetBlock';
+import useTranslation from '../../translations/useTranslation';
+import { useGlobalStyles } from '../../shared/styles/globalStyles';
 
 type Props = {
-    classes: Record<string, string>;
-    commonClasses: Record<string, string>;
-    inputRef: Ref<HTMLInputElement>;
-    inputFocus: string;
-    handleLogin: (event: FormEvent<HTMLFormElement>) => void;
-    setInputFocus: (e: FormLogin) => void;
-    handleShowRegistrationForm: () => void;
-}
+	classes: Record<string, string>;
+	commonClasses: Record<string, string>;
+	inputRef: Ref<HTMLInputElement>;
+	inputFocus: string;
+	handleLogin: (event: FormEvent<HTMLFormElement>) => void;
+	setInputFocus: (e: FormLogin) => void;
+	handleShowRegistrationForm: () => void;
+};
 
-export const LoginForm: React.FC<Props> = ({ 
-    classes, 
-    commonClasses, 
-    inputFocus, 
-    inputRef, 
-    handleLogin, 
-    handleShowRegistrationForm,
-    setInputFocus
+export const LoginForm: React.FC<Props> = ({
+	classes,
+	commonClasses,
+	inputFocus,
+	inputRef,
+	handleLogin,
+	handleShowRegistrationForm,
+	setInputFocus,
 }) => {
-    const t = useTranslation();
-    const { classes: globalClasses, cx } = useGlobalStyles();
+	const t = useTranslation();
+	const { classes: globalClasses, cx } = useGlobalStyles();
 
-    return (
-        <div
-			className={commonClasses.greatings__formWrapper}
-			ref={inputRef}
-		>
+	return (
+		<div className={commonClasses.greatings__formWrapper} ref={inputRef}>
 			<form
 				action='#'
 				method='post'
@@ -46,16 +43,16 @@ export const LoginForm: React.FC<Props> = ({
 						onBlur={() => {}}
 					/>
 				</div>
-    			<div className={commonClasses.input__wrapper}>
+				<div className={commonClasses.input__wrapper}>
 					<input
-	    				className={cx(
+						className={cx(
 							commonClasses.input__default,
 							inputFocus === 'password'
 								? commonClasses.activeInput
 								: '',
 						)}
-		    			type='password'
-	    				name='userpass'
+						type='password'
+						name='userpass'
 						autoComplete='off'
 						placeholder='password'
 						onFocus={() => setInputFocus('password')}
@@ -65,7 +62,7 @@ export const LoginForm: React.FC<Props> = ({
 				<div>
 					<button
 						className={globalClasses.button}
-                        onClick={() => handleLogin}
+						onClick={() => handleLogin}
 						type='submit'
 					>
 						{t('Log in')}
@@ -79,5 +76,5 @@ export const LoginForm: React.FC<Props> = ({
 				</span>
 			</div>
 		</div>
-    )
-}
+	);
+};

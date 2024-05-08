@@ -7,7 +7,6 @@ import { BottomItems } from '../items/BottomItems';
 
 import { useStyles } from '../styles';
 
-
 interface SliderProps {
 	itemsQuantity: number;
 }

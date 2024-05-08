@@ -6,7 +6,7 @@ export const useGlobalStyles = makeStyles()(() => ({
 		border: 'medium none',
 		borderSpacing: 0,
 		color: '#26589F',
-		fontFamily: '\'PT Sans Narrow\', sans-serif',
+		fontFamily: "'PT Sans Narrow', sans-serif",
 		fontSize: '16px',
 		fontWeight: 'normal',
 		lineHeight: '1.42rem',

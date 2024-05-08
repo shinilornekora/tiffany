@@ -9,30 +9,28 @@ import React, {
 import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
 import { useStyles } from '../../widgets/Greetings/styles';
 import useTranslation from '../../translations/useTranslation';
-// @ts-expect-error: мы хотим это вставить, надо как-то это прокинуть в реп - видео маленькое
-import video from './title.mp4';
 import { RegistryForm } from '../RegistryForm';
 import { LoginForm } from '../LoginForm';
+
+import video from './title.mp4';
 
 export type FormLogin = 'username' | 'password' | 'name' | '';
 
 export const ContentBlock = () => {
-	const t = useTranslation();
-
 	const { classes } = useStyles();
 	const { classes: commonClasses } = useCommonStyles();
 
 	const [logInActive, setLoginActive] = useState<boolean>(false);
 	const [inputFocus, setInputFocus] = useState<FormLogin>('');
 	const [show, setShow] = useState<boolean>(false);
-	
+
 	const inputRef = useRef(null);
 	const ref = useRef(null);
 
 	const handleRegistry = useCallback((event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		// FIXME: Ха, а почему имя пользователя не обрабатывается?
+		// FIXME: со стороны бека блок по cors.
 		const data = {
 			// @ts-expect-error: fuck
 			username: (event.target as EventTarget)['0'].value,
@@ -40,12 +38,13 @@ export const ContentBlock = () => {
 			password: (event.target as EventTarget)['2'].value,
 		};
 
-		// fetch('http://94.250.251.77:80/api/auth/register', {
-		// 	method: 'POST',
-		// 	body: JSON.stringify(data),
-		// }).then(response => {
-		// 	Tiffany.log(response);
-		// });
+		// TODO: это надо заменить на axios-запросы которые у нас в api.ts
+		fetch('http://94.250.251.77:80/api/auth/register', {
+			method: 'POST',
+			body: JSON.stringify(data),
+		}).then(response => {
+			Tiffany.log(response);
+		});
 	}, []);
 
 	useEffect(() => {
@@ -75,13 +74,18 @@ export const ContentBlock = () => {
 	const [isRegistrationFormVisible, setIsRegistrationFormVisible] =
 		useState<boolean>(false);
 
-	const handleShowRegistrationForm = () => {
+	const handleShowRegistrationForm = useCallback(() => {
 		setIsRegistrationFormVisible(true);
-	};
+	}, [setIsRegistrationFormVisible]);
 
-	const handleShowLoginForm = () => {
+	const handleShowLoginForm = useCallback(() => {
 		setIsRegistrationFormVisible(false);
-	};
+	}, [setIsRegistrationFormVisible]);
+
+	const handleSetLoginActive = useCallback(
+		() => setLoginActive(true),
+		[setLoginActive],
+	);
 
 	return (
 		<div className={classes.wrapper}>
@@ -95,7 +99,7 @@ export const ContentBlock = () => {
 			<div className={commonClasses.content__wrapper}>
 				<div
 					ref={ref}
-					onClick={() => setLoginActive(true)}
+					onClick={handleSetLoginActive}
 					className={commonClasses.content__textblock}
 				>
 					<p className={commonClasses.greetings__slider}>
@@ -105,8 +109,8 @@ export const ContentBlock = () => {
 						An endless world of possibilities in soundscape design
 					</p>
 				</div>
-				{isRegistrationFormVisible ? 
-					<RegistryForm 
+				{isRegistrationFormVisible ? (
+					<RegistryForm
 						classes={classes}
 						commonClasses={commonClasses}
 						inputFocus={inputFocus}
@@ -114,7 +118,8 @@ export const ContentBlock = () => {
 						handleRegistry={handleRegistry}
 						setInputFocus={setInputFocus}
 						handleShowLoginForm={handleShowLoginForm}
-					/> : 
+					/>
+				) : (
 					<LoginForm
 						classes={classes}
 						commonClasses={commonClasses}
@@ -124,7 +129,7 @@ export const ContentBlock = () => {
 						setInputFocus={setInputFocus}
 						handleShowRegistrationForm={handleShowRegistrationForm}
 					/>
-				}
+				)}
 			</div>
 		</div>
 	);
