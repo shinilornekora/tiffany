@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
 import { useStyles } from '../../widgets/Greetings/styles';
-import useTranslation from '../../translations/useTranslation';
 import { RegistryForm } from '../RegistryForm';
 import { LoginForm } from '../LoginForm';
 
@@ -42,9 +41,7 @@ export const ContentBlock = () => {
 		fetch('http://94.250.251.77:80/api/auth/register', {
 			method: 'POST',
 			body: JSON.stringify(data),
-		}).then(response => {
-			Tiffany.log(response);
-		});
+		})
 	}, []);
 
 	useEffect(() => {

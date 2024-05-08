@@ -1,5 +1,9 @@
 /// <reference types="react-scripts" />
 
+declare module '*.png';
+declare module '*.jpeg';
+declare module '*.mp4';
+
 declare const Tiffany: {
 	info: () => never;
 	_loginDevFunc: () => void;
@@ -7,6 +11,6 @@ declare const Tiffany: {
 	logout: () => void;
 	language: 'en' | 'ru';
 	ErrorLog: (text: string) => void;
-	log: (text: any) => void;
-	globalDevCall: (fn: any, params?: Record<string, string>) => () => void;
+	log: (text: string) => void;
+	globalDevCall: (fn: (() => unknown), params?: Record<string, string>) => () => void;
 };
