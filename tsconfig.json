@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
+    "baseUrl": "./",
+    "paths": {
+      "@shared/*": ["src/shared/*"],
+      "@types": ["src/types"],
+      "@tiffany": ["src/tiffany"]
+    },
     "lib": [
       "dom",
       "dom.iterable",

@@ -79,8 +79,8 @@ export const RegistryForm: React.FC<Props> = ({
 				</div>
 			</form>
 			<div className={commonClasses.greatings__changeForm}>
-				{t('Уже есть аккаунт? ')}
-				<span onClick={handleShowLoginForm}>{t('Войти!')}</span>
+				{t('Already have an account?')}
+				<span onClick={handleShowLoginForm}>{t('Sign in!')}</span>
 			</div>
 		</div>
 	);

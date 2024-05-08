@@ -72,9 +72,9 @@ export const LoginForm: React.FC<Props> = ({
 				</div>
 			</form>
 			<div className={commonClasses.greatings__changeForm}>
-				{t('Нет аккаунта? ')}
+				{t('No account?')}
 				<span onClick={handleShowRegistrationForm}>
-					{t('Зарегистрироваться!')}
+					{ ` ${t('Sign up!')}` }
 				</span>
 			</div>
 		</div>
