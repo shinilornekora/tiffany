@@ -24,7 +24,7 @@ module.exports = {
 	'parser': '@typescript-eslint/parser',
 	'parserOptions': {
 		'ecmaVersion': 'latest',
-		'sourceType': 'module'
+		'sourceType': 'module',
 	},
 	'plugins': [
 		'@typescript-eslint',
@@ -64,5 +64,5 @@ module.exports = {
 		'newline-before-return': 1,
 		'no-multi-spaces': 1,
 		'no-useless-computed-key': 1,
-	}
+	},
 };

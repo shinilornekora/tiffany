@@ -34,21 +34,11 @@ export const ContentBlock = () => {
 
 	const handleRegistry = useCallback((event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-
-		// FIXME: со стороны бека блок по cors.
-		const data = {
-			// @ts-expect-error: fuck
-			username: (event.target as EventTarget)['0'].value,
-			// @ts-expect-error: fuck
-			password: (event.target as EventTarget)['2'].value,
-		};
-
-		// TODO: это надо заменить на axios-запросы которые у нас в api.ts
-		fetch('http://94.250.251.77:80/api/auth/register', {
-			method: 'POST',
-			body: JSON.stringify(data),
-		});
 	}, []);
+
+	const handleLogin = useCallback((event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+	}, [])
 
 	useEffect(() => {
 		if (!logInActive) {
@@ -92,6 +82,7 @@ export const ContentBlock = () => {
 
 	return (
 		<div className={classes.wrapper}>
+			{/* TODO: вынести в отдельный компонент видеофона */}
 			<div>
 				<div className={classes.bg__overlay}>
 					<video className={classes.bg__player} autoPlay muted loop>
@@ -100,6 +91,7 @@ export const ContentBlock = () => {
 				</div>
 			</div>
 			<div className={commonClasses.content__wrapper}>
+				{/* TODO: вынести в отдельный компонент лого */}
 				<div
 					ref={ref}
 					onClick={handleSetLoginActive}
@@ -112,10 +104,13 @@ export const ContentBlock = () => {
 						{ t('An endless world of possibilities in soundscape design') }
 					</p>
 				</div>
+				
+				{/**
+				  * Выглядит так как будто этот компонент на самом деле один и тот же. 
+				  * TODO: обобщить в один и унести логику определения внутрь
+				  */}
 				{isRegistrationFormVisible ? (
 					<RegistryForm
-						classes={classes}
-						commonClasses={commonClasses}
 						inputFocus={inputFocus}
 						inputRef={inputRef}
 						handleRegistry={handleRegistry}
@@ -124,12 +119,10 @@ export const ContentBlock = () => {
 					/>
 				) : (
 					<LoginForm
-						classes={classes}
-						commonClasses={commonClasses}
 						inputFocus={inputFocus}
 						inputRef={inputRef}
-						handleLogin={handleRegistry}
 						setInputFocus={setInputFocus}
+						handleLogin={handleLogin}
 						handleShowRegistrationForm={handleShowRegistrationForm}
 					/>
 				)}

@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { FormEvent, Ref } from 'react';
 import { FormLogin } from '../GreetBlock/GreetBlock';
 import { useTranslation } from '../../shared/hooks/useTranslation';
-import { useGlobalStyles } from '../../shared/styles/globalStyles';
+import { useStyles } from './styles';
 
 type Props = {
-	classes: Record<string, string>;
-	commonClasses: Record<string, string>;
 	inputRef: Ref<HTMLInputElement>;
 	inputFocus: string;
 	handleLogin: (event: FormEvent<HTMLFormElement>) => void;
@@ -16,8 +14,6 @@ type Props = {
 };
 
 export const LoginForm: React.FC<Props> = ({
-	classes,
-	commonClasses,
 	inputFocus,
 	inputRef,
 	handleLogin,
@@ -25,53 +21,55 @@ export const LoginForm: React.FC<Props> = ({
 	setInputFocus,
 }) => {
 	const t = useTranslation();
-	const { classes: globalClasses, cx } = useGlobalStyles();
+	const { classes, cx } = useStyles();
+
+	const handleUsernameFocus = useCallback(() => setInputFocus('username'), [setInputFocus]);
+	const handlePasswordFocus = useCallback(() => setInputFocus('password'), [setInputFocus]);
 
 	return (
-		<div className={commonClasses.greatings__formWrapper} ref={inputRef}>
+		<div className={classes.greatings__formWrapper} ref={inputRef}>
 			<form
 				action='#'
 				method='post'
 				className={classes.startInputWrapper}
+				onSubmit={handleLogin}
 			>
-				<div className={commonClasses.input__wrapper}>
+				<div className={classes.input__wrapper}>
 					<input
-						className={`${commonClasses.input__default} ${inputFocus === 'username' ? commonClasses.activeInput : ''}`}
+						className={cx(classes.input__default, {
+							[classes.activeInput]: inputFocus === 'username'
+						})}
 						type='text'
 						name='username'
 						autoComplete='off'
 						placeholder='login'
-						onFocus={() => setInputFocus('username')}
-						onBlur={() => {}}
+						onFocus={handleUsernameFocus}
 					/>
 				</div>
-				<div className={commonClasses.input__wrapper}>
+				<div className={classes.input__wrapper}>
 					<input
 						className={cx(
-							commonClasses.input__default,
-							inputFocus === 'password'
-								? commonClasses.activeInput
-								: '',
+							classes.input__default, {
+								[classes.activeInput]: inputFocus === 'password'
+							}
 						)}
 						type='password'
 						name='userpass'
 						autoComplete='off'
 						placeholder='password'
-						onFocus={() => setInputFocus('password')}
-						onBlur={() => {}}
+						onFocus={handlePasswordFocus}
 					/>
 				</div>
 				<div>
 					<button
-						className={globalClasses.button}
-						onClick={() => handleLogin}
+						className={classes.button}
 						type='submit'
 					>
 						{t('Log in')}
 					</button>
 				</div>
 			</form>
-			<div className={commonClasses.greatings__changeForm}>
+			<div className={classes.greatings__changeForm}>
 				{t('No account?')}
 				<span onClick={handleShowRegistrationForm}>
 					{ ` ${t('Sign up!')}` }
