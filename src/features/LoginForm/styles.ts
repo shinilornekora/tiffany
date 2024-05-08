@@ -89,8 +89,11 @@ export const useStyles = makeStyles()(() => ({
     greatings__changeForm: {
 		marginTop: '40px',
 		textAlign: 'center',
+		color: '#FFFFFF',
+		textShadow: '-1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000',
 		span: {
 			cursor: 'pointer',
+			padding: '10px',
 		},
 	},
 }));

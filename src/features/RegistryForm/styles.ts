@@ -4,7 +4,7 @@ export const useStyles = makeStyles()(() => ({
 	greatings__formWrapper: {
 		display: 'block',
 		pointerEvents: 'none',
-		opacity: 0,
+		opacity: 1,
 	},
     startInputWrapper: {
 		display: 'flex',
@@ -89,8 +89,12 @@ export const useStyles = makeStyles()(() => ({
     greatings__changeForm: {
 		marginTop: '40px',
 		textAlign: 'center',
+		fontSize: '18px',
+		color: '#FFFFFF',
+		textShadow: '-1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000',
 		span: {
 			cursor: 'pointer',
+			padding: '10px',
 		},
 	},
 }));
