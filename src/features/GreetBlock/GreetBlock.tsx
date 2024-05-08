@@ -11,7 +11,7 @@ import gsap from 'gsap';
 import { RegistryForm } from '../RegistryForm';
 import { LoginForm } from '../LoginForm';
 
-import { useStyles } from '../../widgets/Greetings/styles';
+import { useStyles } from '../../pages/Greetings/styles';
 import { useTranslation } from '../../shared/hooks/useTranslation';
 import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
 

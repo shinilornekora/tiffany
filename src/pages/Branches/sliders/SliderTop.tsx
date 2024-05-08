@@ -28,62 +28,7 @@ export const SliderTop = ({ itemsQuantity }: SliderProps) => {
 		slidesToScroll: 1,
 		prevArrow: <SamplePrevArrow />,
 		nextArrow: <SampleNextArrow />,
-		responsive: [
-			{
-				breakpoint: 5000,
-				settings: {
-					slidesToShow: 15,
-				},
-			},
-			{
-				breakpoint: 2500,
-				settings: {
-					slidesToShow: 11,
-				},
-			},
-			{
-				breakpoint: 2000,
-				settings: {
-					slidesToShow: 9,
-				},
-			},
-			{
-				breakpoint: 1300,
-				settings: {
-					slidesToShow: 7,
-				},
-			},
-			{
-				breakpoint: 1100,
-				settings: {
-					slidesToShow: 6,
-				},
-			},
-			{
-				breakpoint: 900,
-				settings: {
-					slidesToShow: 5,
-				},
-			},
-			{
-				breakpoint: 800,
-				settings: {
-					slidesToShow: 4,
-				},
-			},
-			{
-				breakpoint: 700,
-				settings: {
-					slidesToShow: 3,
-				},
-			},
-			{
-				breakpoint: 500,
-				settings: {
-					slidesToShow: 2,
-				},
-			},
-		],
+		responsive: responsiveConfig
 	};
 
 	return (
@@ -94,3 +39,60 @@ export const SliderTop = ({ itemsQuantity }: SliderProps) => {
 		</div>
 	);
 };
+
+const responsiveConfig =  [
+	{
+		breakpoint: 5000,
+		settings: {
+			slidesToShow: 15,
+		},
+	},
+	{
+		breakpoint: 2500,
+		settings: {
+			slidesToShow: 11,
+		},
+	},
+	{
+		breakpoint: 2000,
+		settings: {
+			slidesToShow: 9,
+		},
+	},
+	{
+		breakpoint: 1300,
+		settings: {
+			slidesToShow: 7,
+		},
+	},
+	{
+		breakpoint: 1100,
+		settings: {
+			slidesToShow: 6,
+		},
+	},
+	{
+		breakpoint: 900,
+		settings: {
+			slidesToShow: 5,
+		},
+	},
+	{
+		breakpoint: 800,
+		settings: {
+			slidesToShow: 4,
+		},
+	},
+	{
+		breakpoint: 700,
+		settings: {
+			slidesToShow: 3,
+		},
+	},
+	{
+		breakpoint: 500,
+		settings: {
+			slidesToShow: 2,
+		},
+	},
+];

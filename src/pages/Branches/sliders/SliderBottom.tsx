@@ -27,44 +27,7 @@ export const SliderBottom = ({ itemsQuantity }: SliderProps) => {
 		adaptiveHeight: true,
 		prevArrow: <SamplePrevArrow />,
 		nextArrow: <SampleNextArrow />,
-		responsive: [
-			{
-				breakpoint: 5000,
-				settings: {
-					slidesToShow: 6,
-				},
-			},
-			{
-				breakpoint: 3500,
-				settings: {
-					slidesToShow: 4,
-				},
-			},
-			{
-				breakpoint: 1500,
-				settings: {
-					slidesToShow: 3,
-				},
-			},
-			{
-				breakpoint: 1500,
-				settings: {
-					slidesToShow: 3,
-				},
-			},
-			{
-				breakpoint: 900,
-				settings: {
-					slidesToShow: 2,
-				},
-			},
-			{
-				breakpoint: 500,
-				settings: {
-					slidesToShow: 1,
-				},
-			},
-		],
+		responsive: responsiveConfig
 	};
 
 	return (
@@ -75,3 +38,42 @@ export const SliderBottom = ({ itemsQuantity }: SliderProps) => {
 		</div>
 	);
 };
+
+const responsiveConfig = [
+	{
+		breakpoint: 5000,
+		settings: {
+			slidesToShow: 6,
+		},
+	},
+	{
+		breakpoint: 3500,
+		settings: {
+			slidesToShow: 4,
+		},
+	},
+	{
+		breakpoint: 1500,
+		settings: {
+			slidesToShow: 3,
+		},
+	},
+	{
+		breakpoint: 1500,
+		settings: {
+			slidesToShow: 3,
+		},
+	},
+	{
+		breakpoint: 900,
+		settings: {
+			slidesToShow: 2,
+		},
+	},
+	{
+		breakpoint: 500,
+		settings: {
+			slidesToShow: 1,
+		},
+	},
+];

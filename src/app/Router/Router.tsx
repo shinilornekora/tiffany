@@ -3,11 +3,11 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import { RouterErrorElement } from './ErrorFallback/RouterErrorElement';
 
 import { Root } from '../../Root';
-import { Cart } from '../../widgets/Cart';
-import { Branches } from '../../widgets/Branches';
-import { GreetingsPage } from '../../widgets/Greetings';
-import { Profile } from '../../widgets/Profile';
-import { Card } from '../../widgets/Card';
+import { Cart } from '../../pages/Cart';
+import { Branches } from '../../pages/Branches';
+import { GreetingsPage } from '../../pages/Greetings';
+import { Profile } from '../../pages/Profile';
+import { Card } from '../../pages/Card';
 import { ProtectedRoute } from './ProtectRoute';
 
 const protectedRoutes: RouteObject[] = [
