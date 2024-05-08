@@ -1,14 +1,17 @@
 import React, { useCallback, useState } from 'react';
-import { useStyles } from '../../shared/styles/commonStyles';
-import cn from 'classnames';
 
-import logo from '../static/header/logo.png';
-import language from '../static/header/language.svg';
-import cart from '../static/header/cart.svg';
-import userSettings from '../static/header/settings.svg';
-import useTranslation from '../../translations/useTranslation';
 import { SettingsPopup } from '../SettingsPopup';
+
+import { useTranslation } from '../../shared/hooks/useTranslation';
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
+import { useStyles } from '../../shared/styles/commonStyles';
+
+import language from '../../shared/static/header/language.svg';
+import cart from '../../shared/static/header/cart.svg';
+import userSettings from '../../shared/static/header/settings.svg';
+import logo from '../../shared/static/header/logo.png';
+
+import cn from 'classnames';
 
 export const Header = () => {
 	const { classes, cx } = useStyles();

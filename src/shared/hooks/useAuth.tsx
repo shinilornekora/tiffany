@@ -3,15 +3,19 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLocalStorage } from './useLocalStorage';
 
-import { PRProps } from '../components/protectRoute';
+import { PRProps } from '../../app/Router/ProtectRoute';
 
 type AuthProps = {
-	user?: string;
-	login?: (data: Record<string, string>) => Promise<void>;
-	logout?: () => void;
+	user: string;
+	login: (data: Record<string, string>) => Promise<void>;
+	logout: () => void;
 };
 
-const AuthContext = createContext<AuthProps>({});
+const AuthContext = createContext<AuthProps>({
+	user: '',
+	login: async (data) => (_data => { _data; })(data),
+	logout: () => {},
+});
 
 export const AuthProvider = ({ children }: PRProps) => {
 	const [user, setUser] = useLocalStorage('user', null);

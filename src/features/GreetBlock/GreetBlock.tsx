@@ -11,7 +11,7 @@ import { useStyles } from '../../widgets/Greetings/styles';
 import { RegistryForm } from '../RegistryForm';
 import { LoginForm } from '../LoginForm';
 
-import video from './title.mp4';
+import video from '../../shared/static/title.mp4';
 
 export type FormLogin = 'username' | 'password' | 'name' | '';
 
@@ -41,7 +41,7 @@ export const ContentBlock = () => {
 		fetch('http://94.250.251.77:80/api/auth/register', {
 			method: 'POST',
 			body: JSON.stringify(data),
-		})
+		});
 	}, []);
 
 	useEffect(() => {

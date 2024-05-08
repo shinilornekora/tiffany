@@ -1,14 +1,14 @@
 import React from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
-import { RouterErrorElement } from './shared/components/ErrorBoundary/RouterErrorElement';
+import { RouterErrorElement } from './ErrorFallback/RouterErrorElement';
 
-import { Root } from './Root';
-import { Cart } from './widgets/Cart';
-import { Branches } from './widgets/Branches';
-import { GreetingsPage } from './widgets/Greetings';
-import { Profile } from './widgets/Profile';
-import { Card } from './widgets/Card';
-import { ProtectedRoute } from './shared/components/protectRoute';
+import { Root } from '../../Root';
+import { Cart } from '../../widgets/Cart';
+import { Branches } from '../../widgets/Branches';
+import { GreetingsPage } from '../../widgets/Greetings';
+import { Profile } from '../../widgets/Profile';
+import { Card } from '../../widgets/Card';
+import { ProtectedRoute } from './ProtectRoute';
 
 const protectedRoutes: RouteObject[] = [
 	{

@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Header from '../../features/Header/header';
+import { Header } from '../../features/Header/header';
 
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 import { useStyles } from './styles';
-import useTranslation from '../../translations/useTranslation';
-import cardImg from '../../static/card/cardImg.png';
+import { useTranslation } from '../../shared/hooks/useTranslation';
+
+import cardImg from '../../shared/static/card/cardImg.png';
 
 export const Card = () => {
 	const { classes, cx } = useStyles();

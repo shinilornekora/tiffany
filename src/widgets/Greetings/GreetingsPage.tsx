@@ -14,7 +14,7 @@ export const GreetingsPage = () => {
 		[],
 	);
 	Tiffany._logoutDevFunc = useCallback(
-		() => Tiffany.globalDevCall(logout),
+		() => Tiffany.globalDevCall(logout!),
 		[],
 	);
 

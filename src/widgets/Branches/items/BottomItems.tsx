@@ -1,6 +1,6 @@
 import { useStyles } from '../styles';
 import React, { useState } from 'react';
-import product from '../../static/branches/product.png';
+import product from '../../../shared/static/branches/product.png';
 
 interface BottomItemsProps {
 	productId: number;

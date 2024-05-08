@@ -2,7 +2,7 @@ import Compose from './shared/utils/Compose';
 import React, { ReactNode } from 'react';
 import { RouterProvider } from 'react-router';
 import { GlobalStyle } from './shared/utils/globalStyle';
-import { router } from './Router';
+import { router } from './app/Router/Router';
 import { useGlobalStyles } from './shared/styles/globalStyles';
 
 export function App() {

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Header from '../../features/Header/header';
-import ElementToBuy from './ElementToBuy';
+import { Header } from '../../features/Header/header';
+import { ElementToBuy } from './ElementToBuy';
 
-import cn from 'classnames';
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 import { useStyles } from './styles';
-
 import { TemporaryProducts } from './Samples';
+
+import cn from 'classnames';
 
 export const Cart = () => {
 	const { classes } = useStyles();

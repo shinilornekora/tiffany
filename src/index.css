@@ -20,15 +20,15 @@ a {
 
 @font-face {
 	font-family: 'MAXWELL_BOLD';
-	src: url('fonts/maxwell.bold.ttf');
+	src: url('shared/fonts/maxwell.bold.ttf');
 }
 
 @font-face {
 	font-family: 'MAXWELL_REGULAR';
-	src: url('fonts/maxwell.regular.ttf');
+	src: url('shared/fonts/maxwell.regular.ttf');
 }
 
 @font-face {
 	font-family: 'MAXWELL_LIGHT';
-	src: url('fonts/maxwell.light.ttf');
+	src: url('shared/fonts/maxwell.light.ttf');
 }

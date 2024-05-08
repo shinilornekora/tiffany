@@ -35,7 +35,7 @@ export const useStyles = makeStyles()(() => ({
 		paddingRight: '15px',
 		position: 'relative',
 		'::before': {
-			content: "''",
+			content: '\'\'',
 			position: 'absolute',
 			top: '0px',
 			left: '0px',

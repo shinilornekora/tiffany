@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { Product } from '../../types';
 import { useStyles } from './styles';
-import useTranslation from '../../translations/useTranslation';
+import { useTranslation } from '../../shared/hooks/useTranslation';
 
-const ElementToBuy = ({ name, price, picture }: Product) => {
+export const ElementToBuy = ({ name, price, picture }: Product) => {
 	const { classes } = useStyles();
 	const t = useTranslation();
 
@@ -22,5 +23,3 @@ const ElementToBuy = ({ name, price, picture }: Product) => {
 		</div>
 	);
 };
-
-export default ElementToBuy;

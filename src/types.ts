@@ -1,12 +1,14 @@
+export type RString = Record<string, string>;
+
 export interface User {
 	email: string;
 	password: string;
-	credentials: { [key: string]: string };
+	credentials: RString;
 	licenses_key?: Array<string>;
 	avatar?: string;
 	isAdmin?: boolean;
 	status: number;
-	creditCard: { [key: string]: string };
+	creditCard: RString;
 }
 
 export interface Product {
@@ -33,7 +35,7 @@ export interface Message {
 	text: string;
 	sender: User;
 	recipient: string;
-	content: Array<string>;
+	content: string[];
 	reputation: number;
 	forum: string;
 }
@@ -41,7 +43,7 @@ export interface Message {
 export interface Forum {
 	topic: string;
 	theme: string;
-	tags: Array<string>;
+	tags: string[];
 }
 
-export type ApiResponse = Record<string, string>;
+export type ApiResponse = RString;

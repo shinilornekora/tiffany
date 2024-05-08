@@ -1,5 +1,5 @@
 import { useStyles } from '../styles';
-import useTranslation from '../../../translations/useTranslation';
+import { useTranslation } from '../../../shared/hooks/useTranslation';
 
 export const TopItem = () => {
 	const { classes } = useStyles();

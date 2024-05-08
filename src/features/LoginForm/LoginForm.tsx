@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { FormEvent, Ref } from 'react';
 import { FormLogin } from '../GreetBlock/GreetBlock';
-import useTranslation from '../../translations/useTranslation';
+import { useTranslation } from '../../shared/hooks/useTranslation';
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 
 type Props = {

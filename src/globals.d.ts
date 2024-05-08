@@ -12,5 +12,7 @@ declare const Tiffany: {
 	language: 'en' | 'ru';
 	ErrorLog: (text: string) => void;
 	log: (text: string) => void;
-	globalDevCall: (fn: (() => unknown), params?: Record<string, string>) => () => void;
+	globalDevCall: (
+		fn: (data: RString) => Promise<void> | void, 
+		params?: RString) => () => void;
 };
