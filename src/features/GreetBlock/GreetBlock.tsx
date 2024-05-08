@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import React, {
 	FormEvent,
 	useCallback,
@@ -6,16 +5,23 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
-import { useStyles } from '../../widgets/Greetings/styles';
+
+import gsap from 'gsap';
+
 import { RegistryForm } from '../RegistryForm';
 import { LoginForm } from '../LoginForm';
+
+import { useStyles } from '../../widgets/Greetings/styles';
+import { useTranslation } from '../../shared/hooks/useTranslation';
+import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
 
 import video from '../../shared/static/title.mp4';
 
 export type FormLogin = 'username' | 'password' | 'name' | '';
 
 export const ContentBlock = () => {
+	const t = useTranslation();
+
 	const { classes } = useStyles();
 	const { classes: commonClasses } = useCommonStyles();
 
@@ -100,10 +106,10 @@ export const ContentBlock = () => {
 					className={commonClasses.content__textblock}
 				>
 					<p className={commonClasses.greetings__slider}>
-						Welcome to TeamEntropy
+						{ t('Welcome to TeamEntropy') }
 					</p>
 					<p className={commonClasses.greetings__description}>
-						An endless world of possibilities in soundscape design
+						{ t('An endless world of possibilities in soundscape design') }
 					</p>
 				</div>
 				{isRegistrationFormVisible ? (
