@@ -2,8 +2,9 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: MAXWELL_REGULAR, serif;
-}
+	font-family: Kreadon, sans-serif;
+	letter-spacing: -1px;
+}	
 
 html,
 body,
@@ -20,15 +21,30 @@ a {
 
 @font-face {
 	font-family: 'MAXWELL_BOLD';
-	src: url('shared/fonts/maxwell.bold.ttf');
+	src: url('shared/fonts/maxwell/maxwell.bold.ttf');
 }
 
 @font-face {
 	font-family: 'MAXWELL_REGULAR';
-	src: url('shared/fonts/maxwell.regular.ttf');
+	src: url('shared/fonts/maxwell/maxwell.regular.ttf');
 }
 
 @font-face {
 	font-family: 'MAXWELL_LIGHT';
-	src: url('shared/fonts/maxwell.light.ttf');
+	src: url('shared/fonts/maxwell/maxwell.light.ttf');
+}
+
+@font-face {
+	font-family: 'Kreadon';
+	src: url('shared/fonts/kreadon/Kreadon_Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Kreadon Bold';
+	src: url('shared/fonts/kreadon/Kreadon_Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Kreadon Light';
+	src: url('shared/fonts/kreadon/Kreadon_Light.ttf')
 }
