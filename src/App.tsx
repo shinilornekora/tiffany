@@ -5,7 +5,7 @@ import { GlobalStyle } from './shared/utils/globalStyle';
 import { router } from './Router';
 import { useGlobalStyles } from './shared/styles/globalStyles';
 
-function App() {
+export function App() {
 	useGlobalStyles();
 
 	return (
@@ -18,5 +18,3 @@ function App() {
 		</Compose>
 	);
 }
-
-export default App;
