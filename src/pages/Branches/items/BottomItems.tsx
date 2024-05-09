@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useStyles } from '../styles';
-import product from '../../../shared/static/branches/product.png';
+import product from '@shared/static/branches/product.png';
 
 interface BottomItemsProps {
 	productId: number;

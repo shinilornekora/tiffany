@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Header } from '../../features/Header/header';
 import { SliderBottom } from './sliders/SliderBottom';
 import { SliderTop } from './sliders/SliderTop';
 
-import { useGlobalStyles } from '../../shared/styles/globalStyles';
+import { useGlobalStyles } from '@shared/styles/globalStyles';
+import { Header } from '@features/Header/header';
 
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';

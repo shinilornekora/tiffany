@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useStyles } from './styles';
-import { useTranslation } from '../../../shared/hooks/useTranslation';
+import { useTranslation } from '@shared/hooks/useTranslation';
 
 export const RouterErrorElement = () => {
 	const { classes } = useStyles();

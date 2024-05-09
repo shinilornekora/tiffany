@@ -4,14 +4,15 @@ import gsap from 'gsap';
 
 import { Logo } from './Logo';
 import { VideoBackground } from './VideoBackground';
-import { RegistryForm } from '../../entities/RegistryForm';
-import { LoginForm } from '../../entities/LoginForm';
-import { FormLogin } from '@types';
+import { RegistryForm } from '@entities/RegistryForm';
+import { LoginForm } from '@entities/LoginForm';
 
 import { useLog } from '@shared/hooks/useLog';
 import { useReg } from '@shared/hooks/useReg';
 import { useStyles as useCommonStyles } from '@shared/styles/commonStyles';
-import { useStyles } from '../../pages/Greetings/styles';
+import { useStyles } from '@pages/Greetings/styles';
+
+import { FormLogin } from '@types';
 
 export const ContentBlock = () => {
 	const { classes } = useStyles();

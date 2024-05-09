@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Product } from '../../types';
+import { Product } from '@types';
+import { useTranslation } from '@shared/hooks/useTranslation';
 import { useStyles } from './styles';
-import { useTranslation } from '../../shared/hooks/useTranslation';
 
 export const ElementToBuy = ({ name, price, picture }: Product) => {
 	const { classes } = useStyles();

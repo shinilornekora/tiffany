@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
-import { Header } from '../../features/Header/header';
-import { ContentBlock } from '../../features/GreetBlock/GreetBlock';
 
-import { useStyles } from '../../shared/styles/commonStyles';
-import { useAuth } from '../../shared/hooks/useAuth';
+import { Header } from '@features/Header/header';
+import { ContentBlock } from '@features/GreetBlock/GreetBlock';
+
+import { useAuth } from '@shared/hooks/useAuth';
+import { useStyles } from '@shared/styles/commonStyles';
 
 export const GreetingsPage = () => {
 	const { classes } = useStyles();

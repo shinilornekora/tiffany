@@ -1,15 +1,13 @@
 import React from 'react';
 import { useStyles } from './styles';
-import { Header } from '../../features/Header/header';
 
-import { useTranslation } from '../../shared/hooks/useTranslation';
-
-import cardIcon from '../../shared/static/profile/card.png';
-import noAvatar from '../../shared/static/profile/no-avatar.png';
+import { Header } from '@features/Header/header';
+import cardIcon from '@shared/static/profile/card.png';
+import noAvatar from '@shared/static/profile/no-avatar.png';
+import { useTranslation } from '@shared/hooks/useTranslation';
 
 export const Profile = () => {
 	const t = useTranslation();
-
 	const { classes } = useStyles();
 
 	// Какая то логика получения данных

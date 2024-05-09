@@ -6,26 +6,25 @@ import { useTranslation } from '../../shared/hooks/useTranslation';
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 import { useStyles } from '../../shared/styles/commonStyles';
 
-import language from '../../shared/static/header/language.svg';
-import cart from '../../shared/static/header/cart.svg';
-import userSettings from '../../shared/static/header/settings.svg';
-import logo from '../../shared/static/header/logo.png';
+import language from '@shared/static/header/language.svg';
+import cart from '@shared/static/header/cart.svg';
+import userSettings from '@shared/static/header/settings.svg';
+import logo from '@shared/static/header/logo.png';
 
 import cn from 'classnames';
 
 export const Header = () => {
+	const t = useTranslation();
+
 	const { classes, cx } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
-	const t = useTranslation();
-	const [settingsVisible, setSettingsVisible] = useState<boolean>(false);
-	const handlePopup = useCallback(
-		() => setSettingsVisible(!settingsVisible),
-		[setSettingsVisible, settingsVisible],
-	);
+
+	const [isSetVisible, showSettings] = useState<boolean>(false);
+	const handlePopup = useCallback(() => showSettings(!isSetVisible), [showSettings, isSetVisible]);
 
 	return (
 		<section className={classes.header}>
-			{settingsVisible && <SettingsPopup />}
+			{isSetVisible && <SettingsPopup />}
 			<div
 				className={cn(classes.header__wrapper, globalClasses.container)}
 			>

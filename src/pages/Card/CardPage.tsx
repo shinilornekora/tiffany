@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Header } from '../../features/Header/header';
+import { useGlobalStyles } from '@shared/styles/globalStyles';
+import { useTranslation } from '@shared/hooks/useTranslation';
+import cardImg from '@shared/static/card/cardImg.png';
 
-import { useGlobalStyles } from '../../shared/styles/globalStyles';
+import { Header } from '@features/Header/header';
+
 import { useStyles } from './styles';
-import { useTranslation } from '../../shared/hooks/useTranslation';
 
-import cardImg from '../../shared/static/card/cardImg.png';
 
 export const Card = () => {
 	const t = useTranslation();

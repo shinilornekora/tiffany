@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
-
 import { FormEvent, Ref } from 'react';
-import { FormLogin } from '../../features/GreetBlock/GreetBlock';
-import { useTranslation } from '../../shared/hooks/useTranslation';
+
+import { useTranslation } from '@shared/hooks/useTranslation';
+import { FormLogin } from '@types';
+
 import { useStyles } from './styles';
 
 type Props = {

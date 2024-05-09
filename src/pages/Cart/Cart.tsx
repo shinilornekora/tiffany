@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Header } from '../../features/Header/header';
-import { ElementToBuy } from './ElementToBuy';
+import { Header } from '@features/Header/header';
+import { useGlobalStyles } from '@shared/styles/globalStyles';
 
-import { useGlobalStyles } from '../../shared/styles/globalStyles';
-import { useStyles } from './styles';
+import { ElementToBuy } from './ElementToBuy';
 import { TemporaryProducts } from './Samples';
+import { useStyles } from './styles';
 
 import cn from 'classnames';
 

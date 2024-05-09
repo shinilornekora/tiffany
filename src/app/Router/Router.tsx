@@ -1,14 +1,16 @@
 import React from 'react';
+
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import { RouterErrorElement } from './ErrorFallback/RouterErrorElement';
 
-import { Root } from '../../Root';
-import { Cart } from '../../pages/Cart';
-import { Branches } from '../../pages/Branches';
-import { GreetingsPage } from '../../pages/Greetings';
-import { Profile } from '../../pages/Profile';
-import { Card } from '../../pages/Card';
 import { ProtectedRoute } from './ProtectRoute';
+import { GreetingsPage } from '@pages/Greetings';
+import { Branches } from '@pages/Branches';
+import { Profile } from '@pages/Profile';
+import { Cart } from '@pages/Cart';
+import { Card } from '@pages/Card';
+
+import { Root } from '../../Root';
 
 const protectedRoutes: RouteObject[] = [
 	{
