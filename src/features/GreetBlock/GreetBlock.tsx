@@ -1,44 +1,42 @@
-import React, {
-	FormEvent,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import gsap from 'gsap';
 
-import { RegistryForm } from '../RegistryForm';
-import { LoginForm } from '../LoginForm';
+import { Logo } from './Logo';
+import { VideoBackground } from './VideoBackground';
+import { RegistryForm } from '../../entities/RegistryForm';
+import { LoginForm } from '../../entities/LoginForm';
+import { FormLogin } from '@types';
 
+import { useLog } from '@shared/hooks/useLog';
+import { useReg } from '@shared/hooks/useReg';
+import { useStyles as useCommonStyles } from '@shared/styles/commonStyles';
 import { useStyles } from '../../pages/Greetings/styles';
-import { useTranslation } from '../../shared/hooks/useTranslation';
-import { useStyles as useCommonStyles } from '../../shared/styles/commonStyles';
-
-import video from '../../shared/static/title.mp4';
-
-export type FormLogin = 'username' | 'password' | 'name' | '';
 
 export const ContentBlock = () => {
-	const t = useTranslation();
-
 	const { classes } = useStyles();
 	const { classes: commonClasses } = useCommonStyles();
 
-	const [logInActive, setLoginActive] = useState<boolean>(false);
-	const [inputFocus, setInputFocus] = useState<FormLogin>('');
 	const [show, setShow] = useState<boolean>(false);
+	const [inputFocus, setInputFocus] = useState<FormLogin>('');
+	const [logInActive, setLoginActive] = useState<boolean>(false);
+	const [isRegFormVisible, setRegFormVisible] = useState<boolean>(false);
 
-	const inputRef = useRef(null);
+	const handleShowRegistrationForm = useCallback(
+		() => setRegFormVisible(true),
+		[setRegFormVisible],
+	);
+	const handleShowLoginForm = useCallback(
+		() => setRegFormVisible(false),
+		[setRegFormVisible],
+	);
+	const handleSetLoginActive = useCallback(
+		() => setLoginActive(true),
+		[setLoginActive],
+	);
+
 	const ref = useRef(null);
-
-	const handleRegistry = useCallback((event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-	}, []);
-
-	const handleLogin = useCallback((event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-	}, []);
+	const inputRef = useRef(null);
 
 	useEffect(() => {
 		if (!logInActive) {
@@ -64,58 +62,24 @@ export const ContentBlock = () => {
 		});
 	}, [show]);
 
-	const [isRegistrationFormVisible, setIsRegistrationFormVisible] =
-		useState<boolean>(false);
-
-	const handleShowRegistrationForm = useCallback(() => {
-		setIsRegistrationFormVisible(true);
-	}, [setIsRegistrationFormVisible]);
-
-	const handleShowLoginForm = useCallback(() => {
-		setIsRegistrationFormVisible(false);
-	}, [setIsRegistrationFormVisible]);
-
-	const handleSetLoginActive = useCallback(
-		() => setLoginActive(true),
-		[setLoginActive],
-	);
-
 	return (
 		<div className={classes.wrapper}>
-			{/* TODO: вынести в отдельный компонент видеофона */}
-			<div>
-				<div className={classes.bg__overlay}>
-					<video className={classes.bg__player} autoPlay muted loop>
-						<source src={video} type='video/mp4' />
-					</video>
-				</div>
-			</div>
+			<VideoBackground classes={classes} />
 			<div className={commonClasses.content__wrapper}>
-				{/* TODO: вынести в отдельный компонент лого */}
-				<div
+				<Logo
+					commonClasses={commonClasses}
+					cb={handleSetLoginActive}
 					ref={ref}
-					onClick={handleSetLoginActive}
-					className={commonClasses.content__textblock}
-				>
-					<p className={commonClasses.greetings__slider}>
-						{t('Welcome to TeamEntropy')}
-					</p>
-					<p className={commonClasses.greetings__description}>
-						{t(
-							'An endless world of possibilities in soundscape design',
-						)}
-					</p>
-				</div>
-
+				/>
 				{/**
 				 * Выглядит так как будто этот компонент на самом деле один и тот же.
 				 * TODO: обобщить в один и унести логику определения внутрь
 				 */}
-				{isRegistrationFormVisible ? (
+				{isRegFormVisible ? (
 					<RegistryForm
 						inputFocus={inputFocus}
 						inputRef={inputRef}
-						handleRegistry={handleRegistry}
+						handleRegistry={useReg}
 						setInputFocus={setInputFocus}
 						handleShowLoginForm={handleShowLoginForm}
 					/>
@@ -124,7 +88,7 @@ export const ContentBlock = () => {
 						inputFocus={inputFocus}
 						inputRef={inputRef}
 						setInputFocus={setInputFocus}
-						handleLogin={handleLogin}
+						handleLogin={useLog}
 						handleShowRegistrationForm={handleShowRegistrationForm}
 					/>
 				)}

@@ -42,9 +42,13 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
-            '@shared': path.resolve(__dirname, 'src/shared'),
             '@types': path.resolve(__dirname, 'src/types'),
-            '@tiffany': path.resolve(__dirname, 'src/tiffany.js')
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@shared': path.resolve(__dirname, 'src/shared'),
+            '@widgets': path.resolve(__dirname, 'src/widgets'),
+            '@features': path.resolve(__dirname, 'src/features'),
+            '@entities': path.resolve(__dirname, 'src/entities'),
+            '@tiffany': path.resolve(__dirname, 'src/tiffany.js'),
         },
     },
     plugins: [

@@ -1,33 +1,34 @@
 import React, { useCallback } from 'react';
 
 import { FormEvent, Ref } from 'react';
-import { FormLogin } from '../GreetBlock/GreetBlock';
+import { FormLogin } from '../../features/GreetBlock/GreetBlock';
 import { useTranslation } from '../../shared/hooks/useTranslation';
 import { useStyles } from './styles';
 
 type Props = {
 	inputRef: Ref<HTMLInputElement>;
 	inputFocus: string;
-	handleLogin: (event: FormEvent<HTMLFormElement>) => void;
+	handleRegistry: (event: FormEvent<HTMLFormElement>) => void;
 	setInputFocus: (e: FormLogin) => void;
-	handleShowRegistrationForm: () => void;
+	handleShowLoginForm: () => void;
 };
 
-export const LoginForm: React.FC<Props> = ({
-	inputFocus,
+export const RegistryForm: React.FC<Props> = ({
 	inputRef,
-	handleLogin,
-	handleShowRegistrationForm,
+	handleRegistry,
+	inputFocus,
 	setInputFocus,
+	handleShowLoginForm,
 }) => {
 	const t = useTranslation();
 	const { classes, cx } = useStyles();
 
-	const handleUsernameFocus = useCallback(
-		() => setInputFocus('username'),
+	const nameFocus = useCallback(() => setInputFocus('name'), [setInputFocus]);
+	const usernameFocus = useCallback(
+		() => setInputFocus('name'),
 		[setInputFocus],
 	);
-	const handlePasswordFocus = useCallback(
+	const passwordFocus = useCallback(
 		() => setInputFocus('password'),
 		[setInputFocus],
 	);
@@ -38,18 +39,26 @@ export const LoginForm: React.FC<Props> = ({
 				action='#'
 				method='post'
 				className={classes.startInputWrapper}
-				onSubmit={handleLogin}
+				onSubmit={handleRegistry}
 			>
 				<div className={classes.input__wrapper}>
 					<input
-						className={cx(classes.input__default, {
-							[classes.activeInput]: inputFocus === 'username',
-						})}
+						className={`${classes.input__default} ${inputFocus === 'name' ? classes.activeInput : ''}`}
+						type='text'
+						name='personName'
+						autoComplete='off'
+						placeholder='name'
+						onFocus={nameFocus}
+					/>
+				</div>
+				<div className={classes.input__wrapper}>
+					<input
+						className={`${classes.input__default} ${inputFocus === 'username' ? classes.activeInput : ''}`}
 						type='text'
 						name='username'
 						autoComplete='off'
 						placeholder='login'
-						onFocus={handleUsernameFocus}
+						onFocus={usernameFocus}
 					/>
 				</div>
 				<div className={classes.input__wrapper}>
@@ -61,20 +70,20 @@ export const LoginForm: React.FC<Props> = ({
 						name='userpass'
 						autoComplete='off'
 						placeholder='password'
-						onFocus={handlePasswordFocus}
+						onFocus={passwordFocus}
 					/>
 				</div>
 				<div>
 					<button className={classes.button} type='submit'>
-						{t('Log in')}
+						{t('Register')}
 					</button>
 				</div>
 			</form>
 			<div className={classes.greatings__changeForm}>
-				{t('No account?')}
-				<span onClick={handleShowRegistrationForm}>
-					{t('Sign up!')}
-				</span>
+				{t('Already have an account?')}
+				<span
+					onClick={handleShowLoginForm}
+				>{`    ${t('Sign in!')}`}</span>
 			</div>
 		</div>
 	);

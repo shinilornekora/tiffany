@@ -4,8 +4,12 @@
     "baseUrl": "./",
     "paths": {
       "@shared/*": ["src/shared/*"],
+      "@pages/*": ["src/pages/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@features/*": ["src/features/*"],
+      "@entities/*": ["src/entities/*"],
+      "@tiffany": ["src/tiffany"],
       "@types": ["src/types"],
-      "@tiffany": ["src/tiffany"]
     },
     "lib": [
       "dom",
