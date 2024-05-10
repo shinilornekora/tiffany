@@ -1,4 +1,5 @@
 {
+	"Andromeda: Series FIR": "Andromeda: FIR gives you stability of a fine-tuned FIR filter, which you can customise.\nLargest benefit of AS: FIR is very low CPU usage in Linear Phase Mode. \nAS: FIR gives you a nice workflow to edit your sounds quickly.",
 	"TeamEntropy": "TeamEntropy",
 	"Oops! Seems like the page you asked does not exist.": "Oops! Seems like the page you asked does not exist",
 	"Check your URL once again :)": "Check your URL once again :)",
@@ -19,5 +20,6 @@
 	"Sign in!": "Sign in!",
 	"Add to cart": "Add to cart",
 	"View branch": "View branch",
-	"Andromeda: Series FIR": "Andromeda: FIR gives you stability of a fine-tuned FIR filter, which you can customise.\nLargest benefit of AS: FIR is very low CPU usage in Linear Phase Mode. \nAS: FIR gives you a nice workflow to edit your sounds quickly."
+	"Total": "Total",
+	"Proceed to checkout": "Proceed to checkout"
 }

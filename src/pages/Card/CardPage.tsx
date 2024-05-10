@@ -44,14 +44,11 @@ export const Card = () => {
 							<span className={classes.card__priceItemElement}>
 								45<span>$</span>
 							</span>
-							<a
-								href={'#'}
-								className={classes.card__priceItemElement}
-							>
+							<a className={classes.card__priceItemElement}>
 								{t('Add to cart')}
 							</a>
 							<a
-								href={'#'}
+								href="/branches"
 								className={classes.card__priceItemElement}
 							>
 								{t('View branch')}

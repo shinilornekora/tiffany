@@ -16,4 +16,5 @@ declare const Tiffany: {
 		fn: (data: RString) => Promise<void> | void,
 		params?: RString,
 	) => () => void;
+	toggleLanguage: () => void;
 };

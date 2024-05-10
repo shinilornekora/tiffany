@@ -1,5 +1,7 @@
-import video from '@shared/static/title.mp4';
+import React from 'react';
+
 import { RString } from '@types';
+import video from '@shared/static/title.mp4';
 
 type Props = {
 	classes: RString;

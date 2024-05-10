@@ -6,6 +6,14 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'column',
 		height: '100%',
 	},
+	settings: {
+		transition: '1s',
+		opacity: 0
+	},
+	activeSet: {
+		transition: '1s',
+		opacity: 1
+	},
 	content__textblock: {
 		display: 'flex',
 		flexDirection: 'column',

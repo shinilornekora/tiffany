@@ -1,13 +1,15 @@
-import { UserAPI } from '@shared/apis';
 import { FormEvent, useCallback } from 'react';
+import { UserAPI } from '@shared/apis';
 
-export const useLog = useCallback((event: FormEvent<HTMLFormElement>) => {
-	event.preventDefault();
+export const useLog = () => {
+	return useCallback((event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
 
-	UserAPI.login({
-		username: 'Admin',
-		password: '123123',
-	});
+		UserAPI.login({
+			username: 'Admin',
+			password: '123123',
+		});
 
-	Tiffany.log('Login was done successfully.');
-}, []);
+		Tiffany.log('Login was done successfully.');
+	}, []);
+}

@@ -4,15 +4,11 @@ import gsap from 'gsap';
 
 import { Logo } from './Logo';
 import { VideoBackground } from './VideoBackground';
-import { RegistryForm } from '@entities/RegistryForm';
-import { LoginForm } from '@entities/LoginForm';
-
-import { useLog } from '@shared/hooks/useLog';
-import { useReg } from '@shared/hooks/useReg';
 import { useStyles as useCommonStyles } from '@shared/styles/commonStyles';
 import { useStyles } from '@pages/Greetings/styles';
 
 import { FormLogin } from '@types';
+import { AuthForm } from '@entities/AuthForm';
 
 export const ContentBlock = () => {
 	const { classes } = useStyles();
@@ -21,16 +17,7 @@ export const ContentBlock = () => {
 	const [show, setShow] = useState<boolean>(false);
 	const [inputFocus, setInputFocus] = useState<FormLogin>('');
 	const [logInActive, setLoginActive] = useState<boolean>(false);
-	const [isRegFormVisible, setRegFormVisible] = useState<boolean>(false);
 
-	const handleShowRegistrationForm = useCallback(
-		() => setRegFormVisible(true),
-		[setRegFormVisible],
-	);
-	const handleShowLoginForm = useCallback(
-		() => setRegFormVisible(false),
-		[setRegFormVisible],
-	);
 	const handleSetLoginActive = useCallback(
 		() => setLoginActive(true),
 		[setLoginActive],
@@ -70,29 +57,13 @@ export const ContentBlock = () => {
 				<Logo
 					commonClasses={commonClasses}
 					cb={handleSetLoginActive}
-					ref={ref}
+					_ref={ref}
 				/>
-				{/**
-				 * Выглядит так как будто этот компонент на самом деле один и тот же.
-				 * TODO: обобщить в один и унести логику определения внутрь
-				 */}
-				{isRegFormVisible ? (
-					<RegistryForm
-						inputFocus={inputFocus}
-						inputRef={inputRef}
-						handleRegistry={useReg}
-						setInputFocus={setInputFocus}
-						handleShowLoginForm={handleShowLoginForm}
-					/>
-				) : (
-					<LoginForm
-						inputFocus={inputFocus}
-						inputRef={inputRef}
-						setInputFocus={setInputFocus}
-						handleLogin={useLog}
-						handleShowRegistrationForm={handleShowRegistrationForm}
-					/>
-				)}
+				<AuthForm 
+					inputFocus={inputFocus}
+					inputRef={inputRef}
+					setInputFocus={setInputFocus}
+				/>
 			</div>
 		</div>
 	);

@@ -2,10 +2,11 @@ import React, { useCallback, useState } from 'react';
 
 import { SettingsPopup } from '../SettingsPopup';
 
-import { useTranslation } from '../../shared/hooks/useTranslation';
-import { useGlobalStyles } from '../../shared/styles/globalStyles';
-import { useStyles } from '../../shared/styles/commonStyles';
+import { useTranslation } from '@shared/hooks/useTranslation';
+import { useGlobalStyles } from '@shared/styles/globalStyles';
+import { useStyles } from '@shared/styles/commonStyles';
 
+/* Хочется их нормально получать из бека. */
 import language from '@shared/static/header/language.svg';
 import cart from '@shared/static/header/cart.svg';
 import userSettings from '@shared/static/header/settings.svg';
@@ -16,15 +17,22 @@ import cn from 'classnames';
 export const Header = () => {
 	const t = useTranslation();
 
+	const [isSetVisible, showSettings] = useState<boolean>(false);
+
 	const { classes, cx } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
 
-	const [isSetVisible, showSettings] = useState<boolean>(false);
 	const handlePopup = useCallback(() => showSettings(!isSetVisible), [showSettings, isSetVisible]);
+	const setLanguage = useCallback(() => {
+		Tiffany.toggleLanguage();
+		window.location.reload();
+	}, [Tiffany])
 
 	return (
 		<section className={classes.header}>
-			{isSetVisible && <SettingsPopup />}
+			<div className={isSetVisible ? classes.activeSet : classes.settings}>
+				<SettingsPopup />
+			</div>
 			<div
 				className={cn(classes.header__wrapper, globalClasses.container)}
 			>
@@ -42,7 +50,7 @@ export const Header = () => {
 				<div
 					className={cx(classes.header__inner, classes.header__right)}
 				>
-					<a href='/language' className={classes.header__icon}>
+					<a className={classes.header__icon} onClick={setLanguage}>
 						<img src={language} alt='language' />
 					</a>
 					<a href='/cart' className={classes.header__icon}>

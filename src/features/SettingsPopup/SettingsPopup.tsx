@@ -3,6 +3,8 @@ import { useStyles } from './styles';
 import { useGlobalStyles } from '../../shared/styles/globalStyles';
 import { useTranslation } from '../../shared/hooks/useTranslation';
 
+import cn from 'classnames';
+
 export const SettingsPopup = () => {
 	const { classes } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
@@ -16,7 +18,7 @@ export const SettingsPopup = () => {
 				<div className={classes.email}>example@mail.ru</div>
 			</div>
 			<div className={classes.buttons}>
-				<a href='/profile' className={globalClasses.button}>
+				<a href='/profile' className={ cn(globalClasses.button, classes.button)}>
 					{' '}
 					{t('Edit profile data')}{' '}
 				</a>

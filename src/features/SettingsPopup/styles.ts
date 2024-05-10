@@ -2,18 +2,19 @@ import { makeStyles } from '../../style';
 
 export const useStyles = makeStyles()(() => ({
 	popup: {
-		position: 'absolute',
+		gap: '48px',
 		top: '50px',
 		right: '50px',
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'center',
-		gap: '48px',
-		background: 'rgb(19, 19, 17)',
 		width: '475px',
 		height: '580px',
+		display: 'flex',
 		borderRadius: '15px',
+		alignItems: 'center',
+		position: 'absolute',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		background: 'rgb(19, 19, 17)',
+		transition: '0.6s'
 	},
 	username: {
 		fontSize: '44px',
@@ -34,4 +35,9 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'column',
 		gap: '15px',
 	},
+	button: {
+		padding: '10px 20px',
+		textAlign: 'center',
+		height: 'auto'
+	}
 }));

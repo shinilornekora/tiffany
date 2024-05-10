@@ -1,19 +1,20 @@
+import React, { Ref } from 'react';
+
 import { useTranslation } from '@shared/hooks/useTranslation';
 import { RString } from '@types';
-import { Ref } from 'react';
 
 type Props = {
-	ref: Ref<HTMLDivElement>;
+	_ref: Ref<HTMLDivElement>;
 	cb: () => void;
 	commonClasses: RString;
 };
 
-export const Logo = ({ ref, cb, commonClasses }: Props) => {
+export const Logo = ({ _ref, cb, commonClasses }: Props) => {
 	const t = useTranslation();
 
 	return (
 		<div
-			ref={ref}
+			ref={_ref}
 			onClick={cb}
 			className={commonClasses.content__textblock}
 		>
