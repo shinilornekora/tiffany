@@ -1,8 +1,4 @@
-import React, { 
-    useCallback, 
-    useState,
-    Ref
-} from 'react';
+import React, { useCallback, useState, Ref } from 'react';
 
 import { useTranslation } from '@shared/hooks/useTranslation';
 import { useStyles } from './styles';
@@ -25,9 +21,9 @@ export const AuthForm: React.FC<Props> = ({
 	const t = useTranslation();
 	const { classes } = useStyles();
 
-    const [isLogMode, toggleMode] = useState<boolean>(true);
+	const [isLogMode, toggleMode] = useState<boolean>(true);
 
-    const focusName = useCallback(() => setInputFocus('name'), [setInputFocus]);
+	const focusName = useCallback(() => setInputFocus('name'), [setInputFocus]);
 	const focusUsername = useCallback(
 		() => setInputFocus('username'),
 		[setInputFocus],
@@ -45,9 +41,15 @@ export const AuthForm: React.FC<Props> = ({
 				className={classes.startInputWrapper}
 				onSubmit={isLogMode ? useLog : useReg}
 			>
-                { !isLogMode && <TitleInput focus={inputFocus} cb={focusName} name="name"/>}
-                <TitleInput focus={inputFocus} cb={focusUsername} name="username"/>
-                <TitleInput focus={inputFocus} cb={focusPass} name="password"/>
+				{!isLogMode && (
+					<TitleInput focus={inputFocus} cb={focusName} name='name' />
+				)}
+				<TitleInput
+					focus={inputFocus}
+					cb={focusUsername}
+					name='username'
+				/>
+				<TitleInput focus={inputFocus} cb={focusPass} name='password' />
 				<div>
 					<button className={classes.button} type='submit'>
 						{isLogMode ? t('Log in') : t('Register')}

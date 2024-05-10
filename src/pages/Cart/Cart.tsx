@@ -12,7 +12,7 @@ import cn from 'classnames';
 import { makeKey } from '@shared/utils/makeKey';
 
 export const Cart = () => {
-	const t = useTranslation()
+	const t = useTranslation();
 
 	const { classes } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
@@ -30,12 +30,12 @@ export const Cart = () => {
 				</div>
 				<div className={classes.cart__totalPrice}>
 					<p className={classes.cart__price}>
-						<span>{ t('Total') + ':' } </span>
+						<span>{t('Total') + ':'} </span>
 						<span id='totalPrice'>60</span>
 						<span>$</span>
 					</p>
 					<p className={classes.cart__goToPay}>
-						<a href={'#'}>{ t('Proceed to checkout') }</a>
+						<a href={'#'}>{t('Proceed to checkout')}</a>
 					</p>
 				</div>
 			</div>

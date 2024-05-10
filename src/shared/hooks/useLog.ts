@@ -12,4 +12,4 @@ export const useLog = () => {
 
 		Tiffany.log('Login was done successfully.');
 	}, []);
-}
+};

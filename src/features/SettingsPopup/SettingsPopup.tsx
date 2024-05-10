@@ -18,7 +18,10 @@ export const SettingsPopup = () => {
 				<div className={classes.email}>example@mail.ru</div>
 			</div>
 			<div className={classes.buttons}>
-				<a href='/profile' className={ cn(globalClasses.button, classes.button)}>
+				<a
+					href='/profile'
+					className={cn(globalClasses.button, classes.button)}
+				>
 					{' '}
 					{t('Edit profile data')}{' '}
 				</a>

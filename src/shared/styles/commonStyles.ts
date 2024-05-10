@@ -8,11 +8,11 @@ export const useStyles = makeStyles()(() => ({
 	},
 	settings: {
 		transition: '1s',
-		opacity: 0
+		opacity: 0,
 	},
 	activeSet: {
 		transition: '1s',
-		opacity: 1
+		opacity: 1,
 	},
 	content__textblock: {
 		display: 'flex',

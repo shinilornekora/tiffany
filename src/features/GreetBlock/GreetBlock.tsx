@@ -59,7 +59,7 @@ export const ContentBlock = () => {
 					cb={handleSetLoginActive}
 					_ref={ref}
 				/>
-				<AuthForm 
+				<AuthForm
 					inputFocus={inputFocus}
 					inputRef={inputRef}
 					setInputFocus={setInputFocus}

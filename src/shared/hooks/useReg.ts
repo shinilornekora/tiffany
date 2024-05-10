@@ -12,4 +12,4 @@ export const useReg = () => {
 
 		Tiffany.log('Registry was done successfully.');
 	}, []);
-}
+};

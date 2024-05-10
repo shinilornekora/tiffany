@@ -1,3 +1,3 @@
 export const makeKey = (action: Object): string => {
-    return Object.values(action).reduce((a, b) => a + b, '' + Math.random());
+	return Object.values(action).reduce((a, b) => a + b, '' + Math.random());
 };

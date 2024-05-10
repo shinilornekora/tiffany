@@ -8,7 +8,6 @@ import { Header } from '@features/Header/header';
 
 import { useStyles } from './styles';
 
-
 export const Card = () => {
 	const t = useTranslation();
 
@@ -48,7 +47,7 @@ export const Card = () => {
 								{t('Add to cart')}
 							</a>
 							<a
-								href="/branches"
+								href='/branches'
 								className={classes.card__priceItemElement}
 							>
 								{t('View branch')}

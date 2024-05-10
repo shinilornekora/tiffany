@@ -14,7 +14,7 @@ export const useStyles = makeStyles()(() => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		background: 'rgb(19, 19, 17)',
-		transition: '0.6s'
+		transition: '0.6s',
 	},
 	username: {
 		fontSize: '44px',
@@ -38,6 +38,6 @@ export const useStyles = makeStyles()(() => ({
 	button: {
 		padding: '10px 20px',
 		textAlign: 'center',
-		height: 'auto'
-	}
+		height: 'auto',
+	},
 }));

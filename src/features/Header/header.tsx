@@ -22,15 +22,20 @@ export const Header = () => {
 	const { classes, cx } = useStyles();
 	const { classes: globalClasses } = useGlobalStyles();
 
-	const handlePopup = useCallback(() => showSettings(!isSetVisible), [showSettings, isSetVisible]);
+	const handlePopup = useCallback(
+		() => showSettings(!isSetVisible),
+		[showSettings, isSetVisible],
+	);
 	const setLanguage = useCallback(() => {
 		Tiffany.toggleLanguage();
 		window.location.reload();
-	}, [Tiffany])
+	}, [Tiffany]);
 
 	return (
 		<section className={classes.header}>
-			<div className={isSetVisible ? classes.activeSet : classes.settings}>
+			<div
+				className={isSetVisible ? classes.activeSet : classes.settings}
+			>
 				<SettingsPopup />
 			</div>
 			<div
